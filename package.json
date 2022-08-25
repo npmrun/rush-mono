@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rush-ui/uniapp": "workspace:*",
+    "@changesets/cli": "^2.24.3"
+  }
+}
