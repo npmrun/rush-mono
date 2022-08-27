@@ -1,0 +1,21 @@
+{
+  "name": "@internal/build",
+  "scripts": {
+    "build": "tsx ./scripts/build"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.7.13",
+    "fs-extra": "^10.1.0",
+    "tsx": "^3.8.2",
+    "unbuild": "^0.8.9",
+    "untyped": "^0.4.5"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.2.11"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@rush-ui/playground",
+  "private": false,
+  "description": "",
+  "scripts": {},
+  "buildinfo": {
+    "engine": "unbuild",
+    "formatName": "ply",
+    "isDev": false,
+    "outDir": "./dist",
+    "entry": "index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@rush-ui/common": "workspace:^1.0.0"
+  }
+}

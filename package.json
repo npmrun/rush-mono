@@ -1,11 +1,15 @@
 {
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "build": "npm run build -C ./build",
+    "release": "changeset"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@rush-ui/uniapp": "workspace:*",
+    "@internal/build": "workspace:*",
+    "@rush-ui/playground": "workspace:*",
     "@changesets/cli": "^2.24.3"
   }
 }
