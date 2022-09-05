@@ -1,15 +1,14 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "npm run build -C ./build",
-    "release": "changeset"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@internal/build": "workspace:*",
-    "@rush-ui/playground": "workspace:*",
-    "@changesets/cli": "^2.24.3"
-  }
+    "private": true,
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "build": "pnpm --filter @internal/build build",
+        "release": "changeset"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@changesets/cli": "^2.24.3"
+    }
 }

@@ -1,26 +1,32 @@
 import { defineBuildConfig, build } from 'unbuild'
-import {
-    getPackage,
-    getPackageEntery,
-    getPackageOutDir,
-} from '@build/utils'
+import { getPackage, getPackageEntery, getPackageOutDir } from '@build/utils'
 import { IBuildInfo } from '@build/global'
+import path from 'path'
 
 export default async function(name: string, pkgInfo: any) {
     const buildInfo: IBuildInfo = pkgInfo['buildinfo'] ?? {}
+    const dependencies = pkgInfo['dependencies'] ?? {}
+    const devDependencies = pkgInfo['devDependencies'] ?? {}
+    const peerDependencies = pkgInfo['peerDependencies'] ?? {}
+    const externals = [
+        ...Object.keys(dependencies),
+        ...Object.keys(devDependencies),
+        ...Object.keys(peerDependencies),
+    ]
     await build(
-        getPackage(name),
-        buildInfo.isDev,
+        process.cwd(),
+        false,
         defineBuildConfig({
             declaration: true,
-            dependencies: pkgInfo['dependencies'] ?? {},
-            devDependencies: pkgInfo['devDependencies'] ?? {},
-            peerDependencies: pkgInfo['peerDependencies'] ?? {},
+            dependencies: dependencies,
+            devDependencies: devDependencies,
+            peerDependencies: peerDependencies,
+            externals: externals,
             entries: [
                 {
                     name: buildInfo.formatName,
-                    input: getPackageEntery(name),
-                    outDir: getPackageOutDir(name),
+                    input: buildInfo.entry,
+                    outDir: buildInfo.outDir,
                 },
             ],
             rollup: {

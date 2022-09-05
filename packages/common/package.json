@@ -5,9 +5,8 @@
     "buildinfo": {
         "engine": "unbuild",
         "formatName": "common",
-        "isDev": false,
         "outDir": "./dist",
-        "entry": "src/main.ts"
+        "entry": "./src/main.ts"
     },
     "types": "./dist/common.d.ts",
     "exports": {
@@ -21,6 +20,6 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "vue": "^3.2.37"
+        
     }
 }
