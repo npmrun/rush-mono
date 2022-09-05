@@ -3,6 +3,7 @@ import { getPackage, getPackageEntery, getPackageOutDir } from "@build/utils";
 import { IBuildInfo } from "@build/global";
 import path from "path";
 import _ from "lodash";
+import fs from "fs-extra";
 
 export default async function (name: string, pkgInfo: any) {
   const buildInfo: IBuildInfo = pkgInfo["buildinfo"] ?? {};
@@ -14,6 +15,14 @@ export default async function (name: string, pkgInfo: any) {
     ...Object.keys(devDependencies),
     ...Object.keys(peerDependencies),
   ];
+  const configTS = path.resolve(getPackage(name), "./unbuild.ts");
+  let unbuildConfig = {};
+  if (fs.existsSync(configTS)) {
+    let mo = await import(configTS);
+    mo = mo.default || mo;
+    if (typeof mo === "function") unbuildConfig = mo();
+    else unbuildConfig = mo;
+  }
   await build(
     process.cwd(),
     false,
@@ -51,7 +60,7 @@ export default async function (name: string, pkgInfo: any) {
         emitCJS: true,
         cjsBridge: true,
       },
-      ...buildInfo.unbuildConfig,
+      ...unbuildConfig,
     })
   );
 }

@@ -9,5 +9,5 @@
             "@build/*": ["./*"]
         }
     },
-    "include": ["**/*", "./global.d.ts"]
+    "include": ["**/*", "./global.d.ts", "../temp/unbuild.useless.ts"]
 }

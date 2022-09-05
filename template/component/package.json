@@ -1,23 +1,21 @@
 {
-    "name": "@rush-ui/vvv",
+    "name": "@rush-ui/<%= name %>",
     "version": "1.0.0",
     "description": "",
     "buildinfo": {
         "engine": "vite",
-        "formatName": "vvv",
+        "formatName": "<%= var %>",
         "outDir": "./dist",
         "entry": "./src/index.ts"
     },
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/vvv.mjs",
-            "require": "./dist/vvv.cjs"
+            "import": "./dist/<%= name %>.js",
+            "require": "./dist/<%= name %>.umd.js"
         }
     },
-    "scripts": {
-        "i": "pnpm --filter @rush-ui/vvv install @rush-ui/common@*"
-    },
+    "scripts": {},
     "keywords": [],
     "author": "",
     "license": "ISC",

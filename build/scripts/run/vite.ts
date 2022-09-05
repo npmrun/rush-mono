@@ -2,10 +2,11 @@ import { IBuildInfo } from '@build/global'
 import { build } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import path from 'path'
 import dts from 'vite-plugin-dts'
+import fs from 'fs-extra'
 import _ from 'lodash'
-import { getPackageOutDir } from '@build/utils'
+import { getPackage } from '@build/utils'
+import path from 'path'
 
 export default async function(name: string, pkgInfo: any) {
     const buildInfo: IBuildInfo = pkgInfo['buildinfo'] ?? {}
@@ -21,6 +22,14 @@ export default async function(name: string, pkgInfo: any) {
     externals.forEach((v) => {
         globals[v] = v
     })
+    const configTS = path.resolve(getPackage(name), "./vite.ts")
+    let viteConfig = {}
+    if(fs.existsSync(configTS)){
+        let mo = await import(configTS)
+        mo = mo.default || mo
+        if(typeof mo ==="function") viteConfig = mo()
+        else viteConfig = mo
+    }
     return build({
         logLevel: 'error',
         plugins: [
@@ -46,6 +55,6 @@ export default async function(name: string, pkgInfo: any) {
                 },
             },
         },
-        ...buildInfo.viteConfig
+        ...viteConfig
     })
 }

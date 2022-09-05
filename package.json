@@ -2,6 +2,7 @@
     "private": true,
     "scripts": {
         "preinstall": "npx only-allow pnpm",
+        "new": "writefile",
         "build": "pnpm --filter @internal/build build",
         "release": "changeset"
     },
@@ -9,6 +10,7 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@changesets/cli": "^2.24.3"
+        "@changesets/cli": "^2.24.3",
+        "@noderun/writefile": "^0.3.0"
     }
 }

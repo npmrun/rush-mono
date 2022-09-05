@@ -10,14 +10,33 @@ import runVite from './run/vite'
 import glob from 'fast-glob'
 import { IBuildInfo } from '@build/global'
 import rimraf from 'rimraf'
+import path from 'path'
 
-const dirs = glob.sync('**/*/package.json', {
+let dirs = glob.sync('**/*/package.json', {
     cwd: getPackagesDir(),
     deep: 2,
 })
 
-for (let i = 0; i < dirs.length; i++) {
-    const pkg = dirs[i]
+let mod = await import(path.resolve(getPackagesDir(), "order.ts"))
+mod = mod.default || mod;
+
+const order = mod.order
+
+console.log(`打包顺序：\n ${order.join("\n")}`);
+console.log('\n');
+
+dirs = dirs.filter((v)=>{
+    const [name] = v.split('/')
+    if(order.includes(name)) return false
+    return true
+})
+
+for (let i = 0; i < order.length; i++) {
+    const pkg = order[i]
+    await buildMe(pkg)
+}
+
+async function buildMe(pkg: any) {
     const [name] = pkg.split('/')
     const pkgInfo = getPackagePkgInfo(name)
     const buildInfo: IBuildInfo = pkgInfo['buildinfo'] ?? {}

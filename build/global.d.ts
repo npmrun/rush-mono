@@ -6,6 +6,4 @@ interface IBuildInfo {
     entry: string
     formatName: string
     outDir: string
-    unbuildConfig?: BuildConfig
-    viteConfig?: InlineConfig
 }
