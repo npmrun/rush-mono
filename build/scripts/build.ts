@@ -26,15 +26,18 @@ for (let i = 0; i < dirs.length; i++) {
         return getPackage(name)
     }
     rimraf.sync(getPackageOutDir(name))
+    console.log('<==========>');
+    console.log(`删除${name}输出目录`);
     if (buildInfo['engine'] === 'unbuild' && !pkgInfo.private) {
-        console.log(`开始构建: ${name}`)
+        console.log(`unbuild 开始构建: ${name}`)
         await runBuild(name, pkgInfo)
-        console.log(`构建完成: ${name}`)
+        console.log(`unbuild 构建完成: ${name}`)
     }
     if (buildInfo['engine'] === 'vite' && !pkgInfo.private) {
-        console.log(`开始构建: ${name}`)
+        console.log(`vite    开始构建: ${name}`)
         await runVite(name, pkgInfo)
-        console.log(`构建完成: ${name}`)
+        console.log(`vite    构建完成: ${name}`)
     }
+    console.log('<==========>\n');
     process.cwd = oldCwd
 }

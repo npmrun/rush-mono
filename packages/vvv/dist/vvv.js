@@ -11,6 +11,6 @@ const _sfc_main = {};
 function _sfc_render(_ctx, _cache) {
   return openBlock(), createElementBlock("div", null, "sdada");
 }
-var a = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-760a3bc1"]]);
+var a = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-0c4f85f2"]]);
 const vvb = 222;
 export { a, vvb };

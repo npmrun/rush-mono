@@ -1,4 +1,5 @@
 import type { BuildConfig } from "unbuild"
+import type { InlineConfig } from 'vite'
 
 interface IBuildInfo {
     engine: 'unbuild' | 'vite'
@@ -6,4 +7,5 @@ interface IBuildInfo {
     formatName: string
     outDir: string
     unbuildConfig?: BuildConfig
+    viteConfig?: InlineConfig
 }

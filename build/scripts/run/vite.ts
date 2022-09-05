@@ -22,17 +22,11 @@ export default async function(name: string, pkgInfo: any) {
         globals[v] = v
     })
     return build({
-        root: process.cwd(),
         logLevel: 'error',
         plugins: [
             vue({ isProduction: true }),
             vueJsx(),
-            dts({
-                // outputDir: buildInfo.outDir,
-                // cleanVueFileName: true,
-                // include: [`src`],
-                // staticImport: true,
-            }),
+            dts(),
         ],
         build: {
             outDir: buildInfo.outDir,
@@ -52,5 +46,6 @@ export default async function(name: string, pkgInfo: any) {
                 },
             },
         },
+        ...buildInfo.viteConfig
     })
 }
