@@ -1,0 +1,25 @@
+{
+    "name": "@rush-ui/<%= name %>",
+    "version": "1.0.0",
+    "description": "",
+    "buildinfo": {
+        "engine": "vite",
+        "formatName": "<%= name %>",
+        "outDir": "./dist",
+        "entry": "./src/index.ts"
+    },
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/<%= name %>.js",
+            "require": "./dist/<%= name %>.umd.js"
+        }
+    },
+    "scripts": {},
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "vue": "^3.2.37"
+    }
+}

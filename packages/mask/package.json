@@ -1,25 +1,30 @@
 {
-    "name": "@rush-ui/<%= name %>",
+    "name": "@rush-ui/mask",
     "version": "1.0.0",
     "description": "",
     "buildinfo": {
         "engine": "vite",
-        "formatName": "<%= var %>",
+        "name": "mask",
         "outDir": "./dist",
         "entry": "./src/index.ts"
     },
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/<%= name %>.js",
-            "require": "./dist/<%= name %>.umd.js"
+            "import": "./dist/mask.js",
+            "require": "./dist/mask.umd.js"
         }
     },
-    "scripts": {},
+    "scripts": {
+        "build": "build run vite"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
         "vue": "^3.2.37"
+    },
+    "devDependencies": {
+        "@internal/build": "workspace:*"
     }
 }

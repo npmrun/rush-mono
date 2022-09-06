@@ -3,7 +3,8 @@
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "new": "writefile",
-        "build": "pnpm --filter @internal/build build",
+        "build": "turbo run build",
+        "dev": "turbo run dev --parallel",
         "release": "changeset"
     },
     "keywords": [],
@@ -11,6 +12,9 @@
     "license": "ISC",
     "devDependencies": {
         "@changesets/cli": "^2.24.3",
-        "@noderun/writefile": "^0.3.0"
+        "@internal/tsconfig": "workspace:*",
+        "@noderun/writefile": "^0.3.0",
+        "tsx": "^3.9.0",
+        "turbo": "^1.4.5"
     }
 }
