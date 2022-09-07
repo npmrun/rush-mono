@@ -1,8 +1,10 @@
 import { OutputOptions, rollup } from 'rollup'
 import _ from 'lodash'
 import cliConfig from './cli.config'
+import chalk from 'chalk';
 
 export default async function() {
+    console.log(chalk.green("开始构建"));
     const config = cliConfig(false)
     const bundle = await rollup(config)
     if (!config.output) return

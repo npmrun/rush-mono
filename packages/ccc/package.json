@@ -3,18 +3,14 @@
     "version": "1.0.0",
     "description": "",
     "buildinfo": {
+        "engine": "cli",
         "name": "test",
         "outDir": "./dist",
-        "entry": "./src/index.ts",
-        "cjsBin": true,
-        "watch": "es",
-        "format": [
-            "es"
-        ]
+        "entry": "./src/index.ts"
     },
     "scripts": {
-        "build": "build run rollup",
-        "dev": "build dev rollup"
+        "build": "build build",
+        "dev": "build dev"
     },
     "keywords": [],
     "author": "",

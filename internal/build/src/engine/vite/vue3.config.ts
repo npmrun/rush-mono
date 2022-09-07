@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
 import _ from 'lodash'
-import { buildInfo, externals, globals } from '../parse'
+import { buildInfo, externals, globals } from '@/parse'
 
 export default (isDev: boolean) => {
     return {

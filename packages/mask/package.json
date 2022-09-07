@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "buildinfo": {
+        "engine": "vite",
         "name": "mask",
         "outDir": "./dist",
         "entry": "./src/index.ts",
@@ -17,8 +18,8 @@
         }
     },
     "scripts": {
-        "build": "build run vite",
-        "dev": "build dev vite"
+        "build": "build build",
+        "dev": "build dev"
     },
     "keywords": [],
     "author": "",

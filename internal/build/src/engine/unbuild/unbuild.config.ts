@@ -6,7 +6,7 @@ import {
     dependencies,
     devDependencies,
     peerDependencies,
-} from '../parse'
+} from '@/parse'
 
 export default (isDev: boolean) => {
     return defineBuildConfig({
