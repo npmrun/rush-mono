@@ -19,7 +19,7 @@ importers:
       '@rollup/plugin-alias': ^3.1.9
       '@rollup/plugin-commonjs': ^20.0.0
       '@rollup/plugin-node-resolve': ^14.0.0
-      '@rollup/plugin-replace': 4.0.0
+      '@rollup/plugin-replace': ^4.0.0
       '@types/fs-extra': ^9.0.13
       '@types/lodash': ^4.14.184
       '@types/node': ^18.7.15
@@ -78,6 +78,15 @@ importers:
 
   internal/tsconfig:
     specifiers: {}
+
+  packages/ccc:
+    specifiers:
+      '@internal/build': workspace:*
+      vue: ^3.2.37
+    dependencies:
+      vue: 3.2.38
+    devDependencies:
+      '@internal/build': link:../../internal/build
 
   packages/mask:
     specifiers:
