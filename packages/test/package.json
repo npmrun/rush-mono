@@ -1,22 +1,22 @@
 {
-    "name": "@rush-ui/mask",
+    "name": "@rush-ui/test",
     "version": "1.0.0",
     "description": "",
     "buildinfo": {
-        "name": "mask",
+        "name": "test",
         "outDir": "./dist",
         "entry": "./src/index.ts"
     },
-    "types": "./dist/index.d.ts",
+    "types": "./dist/test.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/mask.js",
-            "require": "./dist/mask.umd.js"
+            "import": "./dist/test.js",
+            "require": "./dist/test.umd.js"
         }
     },
     "scripts": {
-        "build": "build run vite",
-        "dev": "build dev vite"
+        "build": "build run unbuild",
+        "dev": "build dev unbuild"
     },
     "keywords": [],
     "author": "",

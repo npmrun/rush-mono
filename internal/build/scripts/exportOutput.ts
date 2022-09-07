@@ -47,11 +47,13 @@ function getFileType(type: filetype | filetype[]) {
                     sourcemap: false,
                     file: resolvePath(`dist/${name}.es.mjs`),
                     format: "es",
+                    banner: pkg.buildOptions?.cjsBin ? "#!/usr/bin/env node" : "",
                 },
                 {
                     sourcemap: true,
                     file: resolvePath(`dist/${name}.es.min.mjs`),
                     format: "es",
+                    banner: pkg.buildOptions?.cjsBin ? "#!/usr/bin/env node" : "",
                 },
             ]
         }

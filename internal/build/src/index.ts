@@ -1,7 +1,9 @@
 import { Command } from "commander";
 import execa from "execa";
-import { build } from "vite";
-import viteConfig from "./engine/vite.config";
+import { build as viteBuild, createServer } from "vite";
+import { build as unbuildBuild } from "unbuild";
+import viteVue3ComponentEngine from "./engine/vite.vue3.component";
+import unbuildEngine from "./engine/unbuild";
 
 const program = new Command("build");
 program.version("0.0.1", "-v, --version").description("查看当前版本号");
@@ -18,11 +20,46 @@ program
 
 program
   .command("run")
-  .argument("<moduleName>")
-  .description("aa")
-  .action((moduleName: string) => {
-    build(viteConfig);
+  .argument("<engine>")
+  .description("运行何种引擎进行全自动打包")
+  .action((engine: string) => {
+    const env = "production"
+
+    if (engine === "vite") {
+        viteBuild(viteVue3ComponentEngine(env));
+    }
+
+    if (engine === "unbuild") {
+        unbuildBuild(...unbuildEngine(env));
+    }
   });
 
+program
+  .command("dev")
+  .argument("<engine>")
+  .description("启动库开发模式")
+  .action(async (engine: string) => {
+    const env = "development"
+
+    if (engine === "vite") {
+        const server = await createServer({
+            ...viteVue3ComponentEngine(env),
+            logLevel: "info",
+            mode: env,
+            server:{
+                port: 3214,
+                open: true
+            },
+        });
+        await server.listen()
+        server.printUrls()
+    }
+
+    if (engine === "unbuild") {
+        const en = unbuildEngine(env)
+        en[1] = true
+        unbuildBuild(...en);
+    }
+  });
 
 program.parse(process.argv);

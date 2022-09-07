@@ -42,6 +42,7 @@ const tsPlugin = typescript({
   tsconfigOverride: {
     compilerOptions: {
       declaration: isProd,
+      declarationDir: "dist",
       sourceMap: isProd,
     },
   },

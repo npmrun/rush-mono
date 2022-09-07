@@ -1,7 +1,6 @@
 {
   "extends": "@internal/tsconfig/tsconfig.base.json",
   "compilerOptions": {
-    "declarationDir": "dist",
     "target": "ES5",
     "module": "ESNext",
     "baseUrl": ".",
@@ -9,5 +8,10 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [
+    {
+        "path": "./tsconfig.node.json"
+    }
+  ]
 }
