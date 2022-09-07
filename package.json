@@ -2,12 +2,11 @@
     "private": true,
     "scripts": {
         "preinstall": "npx only-allow pnpm",
-        "new": "writefile",
+        "dev": "turbo run dev --parallel",
         "build": "turbo run build",
         "build:cli": "turbo run build --filter @internal/build",
         "dev:mask": "turbo run dev --filter @rush-ui/mask",
         "dev:test": "turbo run dev --filter @rush-ui/test",
-        "dev": "turbo run dev --parallel",
         "release": "changeset"
     },
     "keywords": [],

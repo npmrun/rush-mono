@@ -7,5 +7,5 @@
   "access": "restricted",
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
-  "ignore": ["@internal/build", "@rush-ui/playground"]
+  "ignore": []
 }

@@ -6,6 +6,8 @@
 <script lang="ts" setup>
 
 </script>
-<style lang="less" scoped>
-
+<style scoped>
+div{
+    color: #000;
+}
 </style>
