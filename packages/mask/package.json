@@ -5,7 +5,9 @@
     "buildinfo": {
         "name": "mask",
         "outDir": "./dist",
-        "entry": "./src/index.ts"
+        "entry": "./src/index.ts",
+        "watch": "es",
+        "format": ["es", "umd"]
     },
     "types": "./dist/index.d.ts",
     "exports": {

@@ -1,9 +1,7 @@
 import { Command } from "commander";
-import execa from "execa";
-import { build as viteBuild, createServer } from "vite";
-import { build as unbuildBuild } from "unbuild";
-import viteVue3ComponentEngine from "./engine/vite.vue3.component";
-import unbuildEngine from "./engine/unbuild";
+import { build as viteBuild, dev as viteDev} from "./engine/vite";
+import { build as rollupBuild, dev as rollupDev} from "./engine/rollup";
+import unbuildBuild from "./engine/unbuild";
 
 const program = new Command("build");
 program.version("0.0.1", "-v, --version").description("查看当前版本号");
@@ -23,14 +21,14 @@ program
   .argument("<engine>")
   .description("运行何种引擎进行全自动打包")
   .action((engine: string) => {
-    const env = "production"
-
     if (engine === "vite") {
-        viteBuild(viteVue3ComponentEngine(env));
+        viteBuild()
     }
-
+    if (engine === "rollup") {
+        rollupBuild()
+    }
     if (engine === "unbuild") {
-        unbuildBuild(...unbuildEngine(env));
+        unbuildBuild(false);
     }
   });
 
@@ -39,26 +37,14 @@ program
   .argument("<engine>")
   .description("启动库开发模式")
   .action(async (engine: string) => {
-    const env = "development"
-
     if (engine === "vite") {
-        const server = await createServer({
-            ...viteVue3ComponentEngine(env),
-            logLevel: "info",
-            mode: env,
-            server:{
-                port: 3214,
-                open: true
-            },
-        });
-        await server.listen()
-        server.printUrls()
+        await viteDev()
     }
-
+    if (engine === "rollup") {
+        await rollupDev()
+    }
     if (engine === "unbuild") {
-        const en = unbuildEngine(env)
-        en[1] = true
-        unbuildBuild(...en);
+        unbuildBuild(true);
     }
   });
 

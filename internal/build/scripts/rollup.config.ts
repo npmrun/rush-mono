@@ -53,7 +53,9 @@ const aliasPlugin = alias({
 });
 const replacePlugin = replace({
   preventAssignment: true,
-  __DEV__: !isProd,
+  values: {
+    // "__DEV__": `${!isProd}`,
+  }
 });
 // inputPlugins.push(bundleScss({ output: `${pkg.buildOptions.filename}.scss`, exclusive: false }))
 

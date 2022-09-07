@@ -4,6 +4,7 @@
         "preinstall": "npx only-allow pnpm",
         "dev": "turbo run dev --parallel",
         "build": "turbo run build",
+        "dev:cli": "turbo run dev --filter @internal/build",
         "build:cli": "turbo run build --filter @internal/build",
         "dev:mask": "turbo run dev --filter @rush-ui/mask",
         "dev:test": "turbo run dev --filter @rush-ui/test",

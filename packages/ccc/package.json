@@ -1,24 +1,20 @@
 {
-    "name": "@rush-ui/test",
+    "name": "@rush-ui/ccc",
     "version": "1.0.0",
     "description": "",
     "buildinfo": {
         "name": "test",
         "outDir": "./dist",
         "entry": "./src/index.ts",
+        "cjsBin": true,
         "watch": "es",
-        "format": ["es", "umd"]
-    },
-    "types": "./dist/test.d.ts",
-    "exports": {
-        ".": {
-            "import": "./dist/test.mjs",
-            "require": "./dist/test.cjs"
-        }
+        "format": [
+            "es"
+        ]
     },
     "scripts": {
-        "build": "build run unbuild",
-        "dev": "build dev unbuild"
+        "build": "build run rollup",
+        "dev": "build dev rollup"
     },
     "keywords": [],
     "author": "",
