@@ -1,4 +1,4 @@
-## Rush-Repo
+## Rush-Mono
 
 `turborepo` + `changeset` + `pnpm workspace`
 
