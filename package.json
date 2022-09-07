@@ -6,8 +6,9 @@
         "build": "turbo run build",
         "dev:cli": "turbo run dev --filter @internal/build",
         "build:cli": "turbo run build --filter @internal/build",
-        "dev:mask": "turbo run dev --filter @rush-ui/mask",
-        "dev:test": "turbo run dev --filter @rush-ui/test",
+        "dev:ccc": "turbo run dev --filter @rush-mono/ccc",
+        "dev:mask": "turbo run dev --filter @rush-mono/mask",
+        "dev:test": "turbo run dev --filter @rush-mono/test",
         "release": "changeset"
     },
     "keywords": [],
