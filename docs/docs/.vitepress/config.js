@@ -1,20 +1,23 @@
+import { applyPlugins } from '@ruabick/md-demo-plugins'
+
 export default {
     lang: 'zh-CN',
     lastUpdated: true,
-    title: 'VitePress11',
-    description: 'Just playing around.',
+    title: 'Rush-Mono',
+    description: 'Build Anything',
     themeConfig: {
-        siteTitle: 'My Custom Title',
+        siteTitle: 'Rush-Mono',
         footer: {
             message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2022-present JD Solanki',
+            copyright: `Copyright © ${new Date().getFullYear()}-present Dash`,
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/jd-solanki/anu' },
         ],
         nav: [
             { text: '指导', link: '/guide/introduction' },
-            { text: '组件库', link: '/components/introduction' },
+            { text: '组件', link: '/components/introduction' },
+            { text: '库', link: '/library/introduction' },
             {
                 text: 'Dropdown Menu',
                 items: [
@@ -52,13 +55,21 @@ export default {
         sidebar: {
             '/guide/': [
                 {
-                    text: 'Guide',
+                    text: '导引',
                     items: [
-                        { text: 'Introduction', link: '/guide/introduction' },
+                        { text: '介绍', link: '/guide/introduction' },
                         {
-                            text: 'Getting Started',
+                            text: '开始',
                             link: '/guide/getting-started',
                         },
+                    ],
+                },
+            ],
+            '/library/': [
+                {
+                    text: 'Guide',
+                    items: [
+                        { text: 'Introduction', link: '/library/introduction' },
                     ],
                 },
             ],
@@ -66,31 +77,22 @@ export default {
                 {
                     text: 'Guide',
                     collapsible: true,
+                    collapsed: true,
                     items: [
-                        // This shows `/guide/index.md` page.
                         {
                             text: 'introduction',
                             link: '/components/introduction',
-                        }, // /guide/index.md
-                        { text: 'One', link: '/guide/one' }, // /guide/one.md
-                        { text: 'Two', link: '/guide/two' }, // /guide/two.md
+                        },
                     ],
                 },
             ],
         },
-        // [
-        //     {
-        //         text: 'Guide',
-        //         items: [
-        //             { text: 'Introduction', link: '/introduction' },
-        //             { text: 'Getting Started', link: '/getting-started' },
-        //         ],
-        //     },
-
-        // ],
     },
     markdown: {
         theme: 'dracula',
+        config: (md) => {
+            applyPlugins(md)
+        },
     },
     vite: {},
 }

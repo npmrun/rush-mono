@@ -2,41 +2,29 @@
 layout: home
 
 hero:
-    name: PrincessUI
-    text: Build better interfaces faster.
-    tagline: Beautiful vue3 component library
+    name: Rush-Mono
+    text: 构建一切，享受生活
+    tagline: 集合管理库，懒得每次都得新建一个项目
     image:
         src: /logo.jpg
         alt: VitePress
     actions:
         - theme: brand
-          text: Get Started
+          text: 开始
           link: /guide/introduction
         - theme: alt
-          text: View on GitHub
+          text: 查看GitHub
           link: https://github.com/vuejs/vitepress
 features:
     - icon: ⚡️
-      title: Vite, The DX that can't be beat
-      details: Lorem ipsum...
+      title: 由VitePress提供支持
+      details: 快！
     - icon: 🖖
-      title: Power of Vue meets Markdown
-      details: Lorem ipsum...
+      title: 由Vue集成Markdown提供支持
+      details: 美！
     - icon: 🛠️
-      title: Simple and minimal, always
-      details: Lorem ipsum...
-    - icon: 🛠️
-      title: Simple and minimal, always
-      details: Lorem ipsum...
-    - icon: 🛠️
-      title: Simple and minimal, always
-      details: Lorem ipsum...
-    - icon: 🛠️
-      title: Simple and minimal, always
-      details: Lorem ipsum...
-    - icon: 🛠️
-      title: Simple and minimal, always
-      details: Lorem ipsum...
+      title: 每一个都极简却都不简单
+      details: 简！
 ---
 
 <style>
