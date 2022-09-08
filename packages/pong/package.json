@@ -1,27 +1,23 @@
 {
-    "name": "ping",
-    "version": "1.0.0",
-    "description": "",
+    "name": "pong-ui",
+    "version": "0.0.1",
+    "description": "pong-ui",
     "buildinfo": {
         "engine": "vite",
         "mode": "components",
         "componentsDir": "./src/components",
         "componentsOutDir": "./dist/components",
-        "componentsPrefix": "ping",
-        "name": "ping",
+        "componentsPrefix": "pong",
+        "name": "pong",
         "outDir": "./dist",
         "entry": "./src/index.ts"
     },
-    "main": "./dist/ping.umd.js",
-    "module": "./dist/ping.es.js",
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/pong.umd.js",
+    "module": "./dist/pong.es.js",
     "types": "./dist/index.d.ts",
-    "exports": {
-        ".": {
-            "import": "./dist/ping.es.js",
-            "require": "./dist/ping.umd.js"
-        },
-        "./dist/style.css": "./dist/style.css"
-    },
     "scripts": {
         "build": "build build",
         "dev": "build dev"
