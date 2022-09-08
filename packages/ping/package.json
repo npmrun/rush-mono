@@ -6,6 +6,7 @@
         "engine": "vite",
         "mode": "components",
         "componentsDir": "./src/components",
+        "componentsOutDir": "./dist/components",
         "componentsPrefix": "ping",
         "name": "ping",
         "outDir": "./dist",

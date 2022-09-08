@@ -22,10 +22,11 @@ program
     .description('开始构建')
     .action(() => {
         const engine = buildInfo.engine
+        const mode = buildInfo.mode
         if (engine === 'vite') {
             viteBuild()
         }
-        if (engine === 'cli') {
+        if (engine === 'rollup') {
             rollupBuild()
         }
         if (engine === 'unbuild') {
@@ -38,10 +39,11 @@ program
     .description('启动库开发模式')
     .action(async () => {
         const engine = buildInfo.engine
+        const mode = buildInfo.mode
         if (engine === 'vite') {
             await viteDev()
         }
-        if (engine === 'cli') {
+        if (engine === 'rollup') {
             await rollupDev()
         }
         if (engine === 'unbuild') {

@@ -1,24 +1,38 @@
 import { defineConfig, InlineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import dts from 'vite-plugin-dts'
 import _ from 'lodash'
-import libCss from './plugins/vite-plugin-libcss';
-import { buildInfo, externals, globals } from '@/parse'
+import libCss from './plugins/vite-plugin-libcss'
+import { externals, globals } from '@/parse'
+import path from 'path'
 
-export default (isDev: boolean) => {
+export default (
+    isDev: boolean,
+    opts: {
+        entry: string
+        name: string
+        fileName: string
+        outDir: string
+    }
+) => {
     return {
         root: process.cwd(),
         logLevel: 'error',
-        plugins: [vue({ isProduction: !isDev }), vueJsx(), dts(), libCss()],
+        resolve: {
+            alias: {
+                '@': path.resolve(process.cwd(), './src'),
+            },
+        },
+        plugins: [vue({ isProduction: !isDev }), vueJsx(), libCss()],
         build: {
             sourcemap: 'inline',
-            outDir: buildInfo.outDir,
+            outDir: opts.outDir,
             cssCodeSplit: false,
-            emptyOutDir: true,
+            emptyOutDir: false,
             lib: {
-                entry: buildInfo.entry,
-                name: buildInfo.name,
+                entry: opts.entry,
+                name: opts.name,
+                fileName: opts.fileName,
                 formats: ['es', 'umd'],
             },
             rollupOptions: {

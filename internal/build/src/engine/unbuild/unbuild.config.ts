@@ -1,4 +1,4 @@
-import { defineBuildConfig, BuildConfig } from 'unbuild'
+import { defineBuildConfig } from 'unbuild'
 import _ from 'lodash'
 import {
     buildInfo,
@@ -38,8 +38,7 @@ export default (isDev: boolean) => {
             {
                 name: buildInfo.name,
                 input: buildInfo.entry,
-                outDir: buildInfo.outDir,
-                format: buildInfo.format
+                outDir: buildInfo.outDir
             },
         ],
         rollup: {

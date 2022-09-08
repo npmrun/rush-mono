@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs-extra'
 
 const pkgInfo = fs.readJSONSync(path.resolve(process.cwd(), './package.json'))
-const buildInfo = pkgInfo.buildinfo ?? {}
+const buildInfo: IBuildInfo = pkgInfo.buildinfo ?? {}
 const dependencies = pkgInfo['dependencies'] ?? {}
 const devDependencies = pkgInfo['devDependencies'] ?? {}
 const peerDependencies = pkgInfo['peerDependencies'] ?? {}

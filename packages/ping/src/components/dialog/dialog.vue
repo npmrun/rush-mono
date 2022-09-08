@@ -1,6 +1,6 @@
 <template>
     <div>
-        mask
+        dialog
     </div>
 </template>
 <script lang="ts" setup>

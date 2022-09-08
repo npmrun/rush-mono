@@ -3,7 +3,10 @@
     "compilerOptions": {
         "target": "ESNext",
         "module": "ESNext",
-        "declaration": true
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        }
     },
     "include": ["src"],
     "exclude": ["node_modules"]
