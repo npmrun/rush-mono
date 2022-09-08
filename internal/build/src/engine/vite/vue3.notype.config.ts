@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import _ from 'lodash'
 import libCss from './plugins/vite-plugin-libcss'
-import { externals, globals } from '@/parse'
+import { buildInfo, externals, globals } from '@/parse'
 import path from 'path'
 
 export default (
@@ -11,7 +11,7 @@ export default (
     opts: {
         entry: string
         name: string
-        fileName: string
+        oname: string
         outDir: string
     }
 ) => {
@@ -32,13 +32,31 @@ export default (
             lib: {
                 entry: opts.entry,
                 name: opts.name,
-                fileName: opts.fileName,
+                fileName: (format) => `index${format == 'es' ? '.m' : '.umd.'}js`,
                 formats: ['es', 'umd'],
             },
             rollupOptions: {
-                external: externals,
+                external: (id) => {
+                    if (id.startsWith(buildInfo.componentsPkgPrefix)) {
+                        return true
+                    }
+                    if (externals.includes(id)) {
+                        return true
+                    }
+                    return false
+                },
+
                 output: {
-                    globals: globals,
+                    globals: (id: string) => {
+                        if (id.startsWith(buildInfo.componentsPkgPrefix)) {
+                            const el = id.split('/')
+                            return (
+                                _.upperFirst(buildInfo.componentsPrefix) +
+                                _.upperFirst(el[el.length - 1])
+                            )
+                        }
+                        if (globals[id]) return globals[id]
+                    },
                     exports: 'named',
                 },
             },

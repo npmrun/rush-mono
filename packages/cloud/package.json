@@ -1,24 +1,24 @@
 {
-    "name": "feather-ui",
+    "name": "cloud-ui",
     "version": "0.0.1",
-    "description": "feather-ui",
+    "description": "cloud-ui",
     "buildinfo": {
         "engine": "vite",
         "mode": "components",
         "componentsDir": "./src/components",
         "componentsOutDir": "./dist/components",
-        "componentsPrefix": "feather",
-        "componentsPkgPrefix": "feather-ui/dist/components",
-        "fileName": "feather-ui",
-        "name": "feather",
+        "componentsPrefix": "cloud",
+        "componentsPkgPrefix": "cloud-ui/dist/components",
+        "fileName": "cloud-ui",
+        "name": "cloud",
         "outDir": "./dist",
         "entry": "./src/index.ts"
     },
     "files": [
         "dist"
     ],
-    "main": "./dist/feather-ui.umd.js",
-    "module": "./dist/feather-ui.es.js",
+    "main": "./dist/cloud-ui.umd.js",
+    "module": "./dist/cloud-ui.es.js",
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "build build",
@@ -31,6 +31,6 @@
         "vue": "^3.2.37"
     },
     "devDependencies": {
-        "feather-ui": "."
+        "cloud-ui": "."
     }
 }

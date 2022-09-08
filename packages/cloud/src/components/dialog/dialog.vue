@@ -5,7 +5,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import FeMask from 'feather-ui/dist/components/mask';
+import FeMask from 'cloud-ui/dist/components/mask';
 </script>
 <style lang="css" scoped>
 div{

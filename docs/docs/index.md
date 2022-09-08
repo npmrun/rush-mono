@@ -4,7 +4,7 @@ layout: home
 hero:
     name: Rush-Mono
     text: 构建一切，享受生活
-    tagline: 集合管理库，懒得每次都得新建一个项目
+    tagline: 自用集合管理库，不用每次新建一个项目
     image:
         src: /logo.jpg
         alt: VitePress

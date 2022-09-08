@@ -12,16 +12,11 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@ruabick/md-demo-plugins": "^0.2.8",
-        "@ruabick/vitepress-demo-block": "^0.2.8",
         "vitepress": "1.0.0-alpha.13",
         "vue": "^3.2.39"
     },
-    "pnpm": {
-        "peerDependencyRules": {
-            "ignoreMissing": [
-                "@algolia/client-search"
-            ]
-        }
+    "dependencies": {
+        "feather-ui": "workspace:*",
+        "cloud-ui": "workspace:*"
     }
 }

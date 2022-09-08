@@ -14,6 +14,10 @@ export default (isDev: boolean) => {
         resolve: {
             alias: {
                 '@': path.resolve(process.cwd(), './src'),
+                [buildInfo.componentsPkgPrefix]: path.resolve(
+                    process.cwd(),
+                    buildInfo.componentsDir
+                ),
             },
         },
         plugins: [vue({ isProduction: !isDev }), vueJsx(), dts(), libCss()],
@@ -25,6 +29,7 @@ export default (isDev: boolean) => {
             lib: {
                 entry: buildInfo.entry,
                 name: buildInfo.name,
+                fileName: buildInfo.fileName,
                 formats: ['es', 'umd'],
             },
             rollupOptions: {

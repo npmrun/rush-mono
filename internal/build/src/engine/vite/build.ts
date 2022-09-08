@@ -24,7 +24,7 @@ export default async function () {
                     _.upperFirst(buildInfo.componentsPrefix) +
                     _.upperFirst(name),
                 outDir: path.join('./' + buildInfo.componentsOutDir, name),
-                fileName: name,
+                oname: name
             }
             console.log(`打包${name}组件`)
             await viteBuild(vue3NotypeConfig(false, opts))

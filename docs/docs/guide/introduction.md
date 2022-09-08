@@ -28,4 +28,6 @@ export default { // Highlighted
   }
 }
 ```
-<demo src="../demo.vue" title="Demo block" desc="use demo"></demo>
+
+<fe-dialog></fe-dialog>
+<cd-dialog></cd-dialog>
