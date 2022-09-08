@@ -18,6 +18,8 @@
         "@internal/build": "workspace:*",
         "@internal/tsconfig": "workspace:*",
         "tsx": "^3.9.0",
-        "turbo": "^1.4.5"
+        "turbo": "^1.4.5",
+        "feather-ui": "workspace:*",
+        "cloud-ui": "workspace:*"
     }
 }

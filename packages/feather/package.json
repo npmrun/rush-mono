@@ -29,8 +29,5 @@
     "license": "ISC",
     "dependencies": {
         "vue": "^3.2.37"
-    },
-    "devDependencies": {
-        "feather-ui": "."
     }
 }

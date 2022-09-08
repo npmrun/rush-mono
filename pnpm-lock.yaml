@@ -7,24 +7,23 @@ importers:
       '@changesets/cli': ^2.24.3
       '@internal/build': workspace:*
       '@internal/tsconfig': workspace:*
+      cloud-ui: workspace:*
+      feather-ui: workspace:*
       tsx: ^3.9.0
       turbo: ^1.4.5
     devDependencies:
       '@changesets/cli': 2.24.4
       '@internal/build': link:internal/build
       '@internal/tsconfig': link:internal/tsconfig
+      cloud-ui: link:packages/cloud
+      feather-ui: link:packages/feather
       tsx: 3.9.0
       turbo: 1.4.6
 
   docs:
     specifiers:
-      cloud-ui: workspace:*
-      feather-ui: workspace:*
       vitepress: 1.0.0-alpha.13
       vue: ^3.2.39
-    dependencies:
-      cloud-ui: link:../packages/cloud
-      feather-ui: link:../packages/feather
     devDependencies:
       vitepress: registry.npmmirror.com/vitepress/1.0.0-alpha.13_tbpndr44ulefs3hehwpi2mkf2y
       vue: registry.npmmirror.com/vue/3.2.39
@@ -96,21 +95,15 @@ importers:
 
   packages/cloud:
     specifiers:
-      cloud-ui: .
       vue: ^3.2.37
     dependencies:
       vue: registry.npmmirror.com/vue/3.2.39
-    devDependencies:
-      cloud-ui: 'link:'
 
   packages/feather:
     specifiers:
-      feather-ui: .
       vue: ^3.2.37
     dependencies:
       vue: registry.npmmirror.com/vue/3.2.39
-    devDependencies:
-      feather-ui: 'link:'
 
 packages:
 
