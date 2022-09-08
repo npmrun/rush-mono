@@ -1,22 +1,22 @@
 {
-    "name": "pong-ui",
+    "name": "any-ui",
     "version": "0.0.1",
-    "description": "pong-ui",
+    "description": "any-ui",
     "buildinfo": {
         "engine": "vite",
         "mode": "components",
         "componentsDir": "./src/components",
         "componentsOutDir": "./dist/components",
-        "componentsPrefix": "pong",
-        "name": "pong",
+        "componentsPrefix": "any",
+        "name": "any",
         "outDir": "./dist",
         "entry": "./src/index.ts"
     },
     "files": [
         "dist"
     ],
-    "main": "./dist/pong.umd.js",
-    "module": "./dist/pong.es.js",
+    "main": "./dist/any.umd.js",
+    "module": "./dist/any.es.js",
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "build build",
