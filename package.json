@@ -3,12 +3,10 @@
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "dev": "turbo run dev --parallel",
-        "build": "turbo run build",
+        "build": "turbo run build --filter=./packages/*",
         "dev:cli": "turbo run dev --filter @internal/build",
         "build:cli": "turbo run build --filter @internal/build",
-        "dev:ccc": "turbo run dev --filter @rush-mono/ccc",
-        "dev:mask": "turbo run dev --filter @rush-mono/mask",
-        "dev:test": "turbo run dev --filter @rush-mono/test",
+        "dev:components": "turbo run dev --filter @rush-mono/components",
         "release": "changeset"
     },
     "keywords": [],
@@ -16,6 +14,7 @@
     "license": "ISC",
     "devDependencies": {
         "@changesets/cli": "^2.24.3",
+        "@internal/build": "workspace:*",
         "@internal/tsconfig": "workspace:*",
         "tsx": "^3.9.0",
         "turbo": "^1.4.5"

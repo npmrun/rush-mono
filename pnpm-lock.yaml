@@ -5,11 +5,13 @@ importers:
   .:
     specifiers:
       '@changesets/cli': ^2.24.3
+      '@internal/build': workspace:*
       '@internal/tsconfig': workspace:*
       tsx: ^3.9.0
       turbo: ^1.4.5
     devDependencies:
       '@changesets/cli': 2.24.4
+      '@internal/build': link:internal/build
       '@internal/tsconfig': link:internal/tsconfig
       tsx: 3.9.0
       turbo: 1.4.6
@@ -91,32 +93,11 @@ importers:
   internal/tsconfig:
     specifiers: {}
 
-  packages/ccc:
+  packages/ping:
     specifiers:
-      '@internal/build': workspace:*
       vue: ^3.2.37
     dependencies:
       vue: 3.2.39
-    devDependencies:
-      '@internal/build': link:../../internal/build
-
-  packages/mask:
-    specifiers:
-      '@internal/build': workspace:*
-      vue: ^3.2.37
-    dependencies:
-      vue: 3.2.39
-    devDependencies:
-      '@internal/build': link:../../internal/build
-
-  packages/test:
-    specifiers:
-      '@internal/build': workspace:*
-      vue: ^3.2.37
-    dependencies:
-      vue: 3.2.39
-    devDependencies:
-      '@internal/build': link:../../internal/build
 
 packages:
 
