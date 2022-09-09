@@ -1,3 +1,5 @@
+import { componentPreview } from '@vitepress-demo-preview/plugin'
+
 export default {
     lang: 'zh-CN',
     lastUpdated: true,
@@ -55,10 +57,9 @@ export default {
     },
     markdown: {
         theme: 'dracula',
+        config(md) {
+            md.use(componentPreview)
+        },
     },
-    vite: {
-        optimizeDeps: {
-            include: ["feather-ui"]
-        }
-    },
+    vite: {},
 }

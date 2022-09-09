@@ -1,2 +1,1 @@
-
-## getting-started
+## 环境安装

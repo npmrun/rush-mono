@@ -21,5 +21,12 @@
         "turbo": "^1.4.5",
         "feather-ui": "workspace:*",
         "cloud-ui": "workspace:*"
+    },
+    "pnpm": {
+        "peerDependencyRules": {
+            "ignoreMissing": [
+                "@algolia/client-search"
+            ]
+        }
     }
 }

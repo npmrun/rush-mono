@@ -1,33 +1,17 @@
 ## 介绍
 
-本项目采用的是`turborepo` + `changeset` + `pnpm workspace`技术栈
+本项目采用的是`turborepo` + `changeset` + `pnpm workspace`技术栈,内部使用命令行解耦，通过简单配置即可支持打包各种类型的库，把
+一切都给你封装好了，你只管写代码就可以了。
 
-:::tip
-asda
-:::
+目前支持的打包库：
 
-::: danger sad
-This is a dangerous warning.
-:::
+-   vite
+-   rollup
+-   unbuild
 
-::: details
-This is a dangerous warning.
-:::
-:tada: :100:
+目前供支持的打包类型：
 
-```js{1,4,6-8}
-export default { // Highlighted
-  data () {
-    return {
-      msg: `Highlighted!
-      This line isn't highlighted,
-      but this and the next 2 are.`,
-      motd: 'VitePress is awesome',
-      lorem: 'ipsum'
-    }
-  }
-}
-```
+-   命令行
+-   vue3 组件库（全量打包与组件打包）
 
-<fe-dialog></fe-dialog>
-<cd-dialog></cd-dialog>
+该库的主要目的就是解耦打包工具与源码，使得开发时无需关心打包工具的配置。

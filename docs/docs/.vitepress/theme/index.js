@@ -1,4 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
+import DemoPreview from '@vitepress-demo-preview/component'
+import '@vitepress-demo-preview/component/dist/style.css'
 import './style.css'
 /**
  * 
@@ -19,5 +21,6 @@ export default {
         // console.log(4343)
         app.use(FUI)
         app.use(CUI)
+        app.use(DemoPreview)
     },
 }
