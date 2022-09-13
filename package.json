@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "preinstall": "npx only-allow pnpm",
-        "postinstall": "pnpm build:cli",
+        "build:site": "pnpm build:cli && pnpm build && pnpm docs:build",
         "docs:dev": "pnpm --filter @rush-mono/docs docs:dev",
         "docs:build": "pnpm --filter @rush-mono/docs docs:build",
         "dev": "turbo run dev --parallel",
