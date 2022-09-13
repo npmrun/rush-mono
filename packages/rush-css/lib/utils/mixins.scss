@@ -1,0 +1,22 @@
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: ' ';
+        display: table;
+    }
+}
+
+@mixin center($width, $height: 0) {
+    position: absolute;
+    @if $height != 0 {
+        left: calc(50% - (#{$width} * 0.5));
+        top: calc(50% - (#{$height} * 0.5));
+    } @else {
+        left: calc(50% - (#{$width} * 0.5));
+        top: calc(50% - (#{$width} * 0.5));
+    }
+}
+
+@mixin overflow-touch {
+    -webkit-overflow-scrolling: touch;
+}

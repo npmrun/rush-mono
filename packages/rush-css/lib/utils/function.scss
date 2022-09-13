@@ -1,0 +1,14 @@
+// 鼏运算
+@function powerNumber($number, $exp) {
+    $value: 1;
+    @if $exp > 0 {
+        @for $i from 1 through $exp {
+            $value: $value * $number;
+        }
+    } @else if $exp < 0 {
+        @for $i from 1 through -$exp {
+            $value: divide($value, $number);
+        }
+    }
+    @return $value;
+}

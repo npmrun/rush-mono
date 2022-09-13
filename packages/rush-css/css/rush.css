@@ -1,0 +1,13 @@
+:root {
+  --background-color: red;
+}
+
+div {
+  color: var(--background-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: var(--background-color);
+}
+
+/*# sourceMappingURL=rush.css.map */

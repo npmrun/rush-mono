@@ -1,0 +1,25 @@
+{
+    "name": "rush-css",
+    "version": "1.0.0",
+    "description": "",
+    "main": "lib/index.scss",
+    "scripts": {
+        "build": "npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+        "build-autoprefix": "postcss --use autoprefixer --map false --output css/rush.css css/rush.css",
+        "build-cleancss": "cleancss -o css/rush.min.css css/rush.css",
+        "build-sass": "sass --source-map lib/index.scss css/rush.css",
+        "clean": "rimraf css",
+        "deploy": "npm run clean && npm run build",
+        "dev": "npm run build-sass -- --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^10.4.7",
+        "clean-css-cli": "^5.6.0",
+        "sass": "^1.54.9",
+        "postcss-cli": "^9.1.0",
+        "rimraf": "^3.0.2"
+    }
+}
