@@ -1,0 +1,47 @@
+@import '../init';
+
+.fe-button {
+    position: relative;
+    cursor: pointer;
+    height: 2.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: $radius;
+    background-color: $white;
+    border-color: $grey-light;
+    border-width: 1px;
+    color: $black-bis;
+    display: inline-flex;
+    align-items: center;
+    border-style: solid;
+
+    &:hover::before {
+        opacity: 0.15;
+    }
+    &::before {
+        position: absolute;
+        inset: 0rem;
+        background-color: currentColor;
+        opacity: 0;
+        transition-property: background-color, opacity;
+        transition-timing-function: $easing;
+        transition-duration: $speed;
+        content: '';
+    }
+
+    // &:focus {
+    //     border-color: #485fc7;
+    //     color: #363636;
+    // }
+
+    &--danger {
+        background-color: $danger-color;
+        border-color: transparent;
+        color: $white;
+    }
+    &--warning {
+        background-color: $warning-color;
+        color: $black-bis;
+        border-color: transparent;
+    }
+}

@@ -6,6 +6,7 @@
         "docs:dev": "pnpm --filter @rush-mono/docs docs:dev",
         "docs:build": "pnpm --filter @rush-mono/docs docs:build",
         "dev": "turbo run dev --parallel",
+        "dev:feather": "turbo run dev --filter feather-ui",
         "build": "turbo run build --filter=./packages/*",
         "dev:cli": "turbo run dev --filter @internal/build",
         "build:cli": "turbo run build --filter @internal/build",
