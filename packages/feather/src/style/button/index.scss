@@ -4,6 +4,7 @@
     position: relative;
     cursor: pointer;
     height: 2.5em;
+    line-height: 1.5;
     padding-left: 1em;
     padding-right: 1em;
     border-radius: $radius;
@@ -29,19 +30,36 @@
         content: '';
     }
 
-    // &:focus {
-    //     border-color: #485fc7;
-    //     color: #363636;
-    // }
+    &:focus {
+        border-color: $primary-color;
+        color: $black-bis;
+    }
+    &:focus:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba($primary-color, 0.25);
+    }
 
     &--danger {
         background-color: $danger-color;
         border-color: transparent;
         color: $white;
+        &:focus {
+            border-color: $danger-color;
+            color: $white;
+        }
+        &:focus:not(:active) { 
+            box-shadow: 0 0 0 0.125em rgba($danger-color,.25);
+        }
     }
     &--warning {
         background-color: $warning-color;
         color: $black-bis;
         border-color: transparent;
+        &:focus {
+            border-color: $warning-color;
+            color: $black-bis;
+        }
+        &:focus:not(:active) { 
+            box-shadow: 0 0 0 0.125em rgba($warning-color,.25);
+        }
     }
 }

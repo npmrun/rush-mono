@@ -1,7 +1,7 @@
 <template>
-    <div class="fe-button" :class="[computedClass]">
+    <button class="fe-button" :class="[computedClass]">
         <slot></slot>
-    </div>
+    </button>
 </template>
 <script lang="ts" setup>
 import { computed } from 'vue';
