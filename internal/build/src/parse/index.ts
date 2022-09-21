@@ -1,7 +1,12 @@
 import path from 'path'
 import fs from 'fs-extra'
 
-const pkgInfo = fs.readJSONSync(path.resolve(process.cwd(), './package.json'))
+const jsonFile = path.resolve(process.cwd(), './package.json')
+if(!fs.pathExistsSync(jsonFile)){
+    throw new Error("不存在package.json")
+}
+
+const pkgInfo = fs.readJSONSync(jsonFile)
 const buildInfo: IBuildInfo = pkgInfo.buildinfo ?? {}
 const dependencies = pkgInfo['dependencies'] ?? {}
 const devDependencies = pkgInfo['devDependencies'] ?? {}

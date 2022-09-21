@@ -13,6 +13,9 @@
         "dev:components": "turbo run dev --filter @rush-mono/components",
         "release": "changeset"
     },
+    "publishConfig": {
+        "registry": "http://lnpm.xieyaxin.top/"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",

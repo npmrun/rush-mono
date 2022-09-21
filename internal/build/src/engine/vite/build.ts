@@ -2,6 +2,7 @@ import { build as viteBuild, createServer, resolveConfig } from 'vite'
 import _ from 'lodash'
 import vue3Config from './vue3.config'
 import vue3NotypeConfig from './vue3.notype.config'
+import vue3Component from './vue3.component'
 import { buildInfo } from '@/parse'
 import FastGlob from 'fast-glob'
 import path from 'path'
@@ -24,12 +25,16 @@ export default async function () {
                     _.upperFirst(buildInfo.componentsPrefix) +
                     _.upperFirst(name),
                 outDir: path.join('./' + buildInfo.componentsOutDir, name),
-                oname: name
+                oname: name,
             }
             console.log(`打包${name}组件`)
             await viteBuild(vue3NotypeConfig(false, opts))
         }
+        console.log(`全量${buildInfo.name}组件库`)
+        await viteBuild(vue3Config(false))
     }
-    console.log(`全量${buildInfo.name}组件库`)
-    await viteBuild(vue3Config(false))
+    if (buildInfo.mode === 'component') {
+        await viteBuild(vue3Component(false))
+    }
+    console.log(`打包完成`)
 }

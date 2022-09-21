@@ -1,0 +1,29 @@
+{
+    "name": "@rush-ui/mask",
+    "version": "0.0.1",
+    "description": "",
+    "buildinfo": {
+        "engine": "vite",
+        "mode": "component",
+        "fileName": "rush-mask",
+        "name": "rushMask",
+        "outDir": "./dist",
+        "entry": "./src/index.ts"
+    },
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/rush-mask.umd.js",
+    "module": "./dist/rush-mask.es.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "build": "build build",
+        "dev": "build dev"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "vue": "^3.2.37"
+    }
+}
