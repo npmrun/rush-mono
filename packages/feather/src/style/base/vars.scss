@@ -30,9 +30,12 @@ $radius-rounded: 9999px !default;
 $speed: 86ms !default;
 $easing: ease-out !default;
 
-// 主要色
-$primary-color: $green;
+
 // 警告色
 $warning-color: $yellow;
 // 危险色
 $danger-color: $red;
+
+// 主要色
+$primary-color: $green;
+$primary-light-color: rgba($green, 0.25);

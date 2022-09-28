@@ -1,0 +1,27 @@
+{
+    "name": "module-name",
+    "version": "1.0.0",
+    "description": "",
+    "main": "./dist/index.js",
+    "module": "./dist/index.es.js",
+    "types": "./dist/index.d.ts",
+    "publishConfig": {
+        "registry": "http://lnpm.xieyaxin.top/"
+    },
+    "buildinfo": {
+        "engine": "rollup",
+        "mode": "test",
+        "outDir": "./dist",
+        "entry": [
+            "./src/a.ts",
+            "./src/b.ts"
+        ]
+    },
+    "scripts": {
+        "build": "build build",
+        "dev": "build dev"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

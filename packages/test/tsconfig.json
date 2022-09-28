@@ -1,13 +1,13 @@
 {
     "extends": "@internal/tsconfig/tsconfig.base.json",
     "compilerOptions": {
-        "composite": true,
+        "target": "ESNext",
+        "module": "ESNext",
         "baseUrl": ".",
         "paths": {
-            "@": ["src/index.ts"],
-            "@/*": ["src/*"],
+            "@/*": ["src/*"]
         }
     },
-    "include": ["src", "example"],
+    "include": ["src"],
     "exclude": ["node_modules"]
 }

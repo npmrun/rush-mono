@@ -28,7 +28,7 @@
 }
 ```
 
--   `rollup` + `component`  
+-   `vite` + `component`  
 单个组件打包
 
 ```
@@ -37,5 +37,18 @@
     "name": "cloud", // 变量名
     "outDir": "./dist", // 输出位置
     "entry": "./src/index.ts" // 入口文件
+}
+```
+
+-   `rollup` + `test`  
+测试多个文件打包
+
+```
+{
+    "outDir": "./dist", // 输出位置
+    "entry": [
+        "./src/a.ts",
+        "./src/b.ts",
+    ]
 }
 ```

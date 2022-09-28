@@ -1,6 +1,7 @@
 @import '../init';
 
 .fe-button {
+    $name: fe-button;
     position: relative;
     cursor: pointer;
     height: 2.5em;
@@ -8,20 +9,22 @@
     padding-left: 1em;
     padding-right: 1em;
     border-radius: $radius;
-    background-color: $white;
-    border-color: $grey-light;
     border-width: 1px;
-    color: $black-bis;
     display: inline-flex;
     align-items: center;
     border-style: solid;
+
+    // 相同按钮间隔
+    + & {
+        margin-left: 5px;
+    }
 
     &:hover::before {
         opacity: 0.15;
     }
     &::before {
         position: absolute;
-        inset: 0rem;
+        inset: 0;
         background-color: currentColor;
         opacity: 0;
         transition-property: background-color, opacity;
@@ -30,14 +33,38 @@
         content: '';
     }
 
+    color: $black-bis;
+    border-color: $grey-light;
+    background-color: transparent;
     &:focus {
         border-color: $primary-color;
-        color: $black-bis;
+        color: $primary-color;
     }
     &:focus:not(:active) {
-        box-shadow: 0 0 0 0.125em rgba($primary-color, 0.25);
+        box-shadow: 0 0 0 0.125em $primary-light-color;
     }
 
+    // 默认颜色
+    &--primary {
+        border-color: $primary-color;
+        color: $white;
+        background-color: $primary-color;
+        &:focus {
+            border-color: $primary-color;
+            color: $white;
+        }
+        &:focus:not(:active) {
+            box-shadow: 0 0 0 0.125em $primary-light-color;
+        }
+        &.#{$name}--ghost {
+            background-color: transparent !important;
+            color: $primary-color;
+            border-color: $primary-color !important;
+        }
+    }
+    // 默认颜色END
+
+    // 危险按钮
     &--danger {
         background-color: $danger-color;
         border-color: transparent;
@@ -46,20 +73,33 @@
             border-color: $danger-color;
             color: $white;
         }
-        &:focus:not(:active) { 
-            box-shadow: 0 0 0 0.125em rgba($danger-color,.25);
+        &:focus:not(:active) {
+            box-shadow: 0 0 0 0.125em rgba($danger-color, 0.25);
+        }
+        &.#{$name}--ghost {
+            background-color: transparent !important;
+            color: $danger-color;
+            border-color: $danger-color !important;
         }
     }
+    // 危险按钮END
+    // 警告按钮
     &--warning {
         background-color: $warning-color;
-        color: $black-bis;
+        color: $white;
         border-color: transparent;
         &:focus {
             border-color: $warning-color;
-            color: $black-bis;
+            color: $white;
         }
-        &:focus:not(:active) { 
-            box-shadow: 0 0 0 0.125em rgba($warning-color,.25);
+        &:focus:not(:active) {
+            box-shadow: 0 0 0 0.125em rgba($warning-color, 0.25);
+        }
+        &.#{$name}--ghost {
+            background-color: transparent !important;
+            color: $warning-color;
+            border-color: $warning-color !important;
         }
     }
+    // 警告按钮END
 }
