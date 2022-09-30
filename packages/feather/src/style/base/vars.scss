@@ -1,3 +1,5 @@
+$fe-prefix: fe;
+
 $black:        hsl(0, 0%, 4%) !default;
 $black-bis:    hsl(0, 0%, 7%) !default;
 $black-ter:    hsl(0, 0%, 14%) !default;
@@ -27,7 +29,7 @@ $radius: 4px !default;
 $radius-large: 6px !default;
 $radius-rounded: 9999px !default;
 
-$speed: 86ms !default;
+$speed: 150ms !default;
 $easing: ease-out !default;
 
 

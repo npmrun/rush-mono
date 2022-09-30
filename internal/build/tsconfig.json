@@ -8,7 +8,7 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "typings"],
+  "include": ["src", "typings", "vite.d.ts"],
   "references": [
     {
         "path": "./tsconfig.node.json"

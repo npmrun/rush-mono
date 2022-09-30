@@ -1,29 +1,22 @@
 <template>
     <div>
-        <h2>按钮</h2>
-        <fe-button>
-            按钮
-        </fe-button>
-        <fe-button type="danger">
-            按钮
-        </fe-button>
-        <fe-button type="danger" ghost>
-            按钮
-        </fe-button>
-        <fe-button type="warning">
-            按钮
-        </fe-button>
-        <fe-button type="warning" ghost>
-            按钮
-        </fe-button>
-        <fe-button type="primary">
-            按钮
-        </fe-button>
-        <fe-button type="primary" ghost>
-            按钮
-        </fe-button>
+        <h2>
+            {{ renderName }}
+        </h2>
+        <component :is="renderComponent">sad</component>
+        <component :is="renderDemo"></component>
+        <component :is="renderZhMD"></component>
+        <component :is="renderEnMD"></component>
     </div>
 </template>
 
 <script lang="ts" setup>
+import { components } from "./data"
+
+let renderName = components[0].name
+let renderComponent = components[0].component
+let renderDemo = components[0].demos['basic']
+let renderZhMD = components[0].zh
+let renderEnMD = components[0].en
+
 </script>

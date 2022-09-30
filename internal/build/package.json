@@ -47,6 +47,7 @@
     "unbuild": "^0.8.10",
     "vite": "^2.9.15",
     "vite-plugin-dts": "^1.4.1",
+    "vite-plugin-markdown": "^2.1.0",
     "vue": "^3.2.38"
   }
 }

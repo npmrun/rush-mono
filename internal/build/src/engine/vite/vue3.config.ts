@@ -1,6 +1,7 @@
 import { defineConfig, InlineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { Mode, plugin as mdPlugin } from 'vite-plugin-markdown'
 import dts from 'vite-plugin-dts'
 import _ from 'lodash'
 import libCss from './plugins/vite-plugin-libcss'
@@ -20,7 +21,7 @@ export default (isDev: boolean) => {
                 ),
             },
         },
-        plugins: [vue({ isProduction: !isDev }), vueJsx(), dts(), libCss()],
+        plugins: [mdPlugin({mode: [ Mode.VUE ]}), vue({ isProduction: !isDev }), vueJsx(), dts(), libCss()],
         build: {
             sourcemap: 'inline',
             outDir: buildInfo.outDir,
