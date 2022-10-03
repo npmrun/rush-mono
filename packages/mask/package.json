@@ -29,6 +29,9 @@
     "dependencies": {
         "vue": "^3.2.37"
     },
+    "peerDependencies": {
+        "vue": ">=3.2.0"
+    },
     "devDependencies": {
         "less": "^4.1.3"
     }
