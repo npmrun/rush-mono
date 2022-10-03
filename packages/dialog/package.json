@@ -1,12 +1,12 @@
 {
-    "name": "@rush-ui/rush-mask",
+    "name": "@rush-ui/rush-dialog",
     "version": "0.0.1-beta.1",
     "description": "",
     "buildinfo": {
         "engine": "vite",
         "mode": "component",
-        "fileName": "rush-mask",
-        "name": "rushMask",
+        "fileName": "rush-dialog",
+        "name": "rushDialog",
         "outDir": "./dist",
         "entry": "./src/index.ts"
     },
@@ -16,8 +16,8 @@
     "publishConfig": {
         "registry": "http://lnpm.xieyaxin.top/"
     },
-    "main": "./dist/rush-mask.umd.js",
-    "module": "./dist/rush-mask.es.js",
+    "main": "./dist/rush-dialog.umd.js",
+    "module": "./dist/rush-dialog.es.js",
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "build build",
@@ -27,6 +27,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@rush-ui/rush-mask": "workspace:*",
         "vue": "^3.2.37"
     },
     "devDependencies": {

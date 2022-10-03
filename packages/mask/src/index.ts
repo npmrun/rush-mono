@@ -1,7 +1,9 @@
-import comp from './index.vue'
+import RushMask from './index.vue'
+import { App } from 'vue'
 
-export { comp }
-
-export function add(a: number, b: number) {
-    return a + b
+RushMask.name = 'rush-mask'
+RushMask.install = function (app: App, options: any) {
+    app.component('rush-mask', RushMask)
 }
+export { RushMask }
+export default RushMask

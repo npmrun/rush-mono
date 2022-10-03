@@ -13,10 +13,10 @@
 <script lang="ts" setup>
 import { components } from "./data"
 
-let renderName = components[0].name
-let renderComponent = components[0].component
-let renderDemo = components[0].demos['basic']
-let renderZhMD = components[0].zh
-let renderEnMD = components[0].en
-
+const index = 0
+let renderName = components[index].name
+let renderComponent = components[index].component
+let renderDemo = components[index].demos['basic']
+let renderZhMD = components[index].zh
+let renderEnMD = components[index].en
 </script>
