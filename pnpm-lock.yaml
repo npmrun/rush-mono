@@ -99,11 +99,11 @@ importers:
 
   packages/dialog:
     specifiers:
-      '@rush-ui/rush-mask': workspace:*
+      '@rush-ui/mask': workspace:*
       less: ^4.1.3
       vue: ^3.2.37
     dependencies:
-      '@rush-ui/rush-mask': link:../mask
+      '@rush-ui/mask': link:../mask
       vue: 3.2.39
     devDependencies:
       less: 4.1.3
