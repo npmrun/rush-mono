@@ -1,5 +1,0 @@
----
-"pong-ui": major
----
-
-init

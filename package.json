@@ -23,12 +23,12 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@changesets/cli": "^2.24.3",
+        "@changesets/cli": "^2.25.0",
         "@internal/build": "workspace:*",
         "@internal/tsconfig": "workspace:*",
+        "feather-ui": "workspace:0.0.1-beta.1",
         "tsx": "^3.9.0",
-        "turbo": "^1.4.5",
-        "feather-ui": "workspace:*"
+        "turbo": "^1.5.5"
     },
     "pnpm": {
         "peerDependencyRules": {
