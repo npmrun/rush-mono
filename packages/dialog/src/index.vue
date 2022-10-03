@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import { onMounted, watch, ref, nextTick } from 'vue';
-import RushMask from '@rush-ui/rush-mask';
+import RushMask from '@rush-ui/mask';
 
 const props = withDefaults(defineProps<{
     to?: string
