@@ -70,7 +70,7 @@ function close() {
     display: flex;
 
     .niu-dialog__content {
-        margin: 0;
+        margin: auto;
         // position: absolute;
         // left: 50%;
         // top: 50%;
