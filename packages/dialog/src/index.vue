@@ -3,7 +3,7 @@
         <transition name="fade" @after-leave="close()">
             <rush-mask v-model:show="isShow"></rush-mask>
         </transition>
-        <div class="niu-dialog__wrapper" v-show="isShowWraper" @click.stop>
+        <div class="niu-dialog__wrapper" v-show="isShowWraper" @click.stop="isShow = false">
             <transition name="slide-fade" @after-leave="close()">
                 <div class="niu-dialog__content" v-show="isShow" @click.stop>
                     <slot></slot>
@@ -65,12 +65,13 @@ function close() {
 <style lang="less" scoped>
 .niu-dialog__wrapper {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
     z-index: 999;
     .niu-dialog__content {
-
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
