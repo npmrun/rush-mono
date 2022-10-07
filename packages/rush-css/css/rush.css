@@ -2,6 +2,10 @@
   --background-color: red;
 }
 
+:root[data-theme=dark] {
+  --background-color: red;
+}
+
 div {
   color: var(--background-color);
   display: -webkit-box;

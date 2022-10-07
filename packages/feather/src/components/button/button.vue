@@ -1,18 +1,20 @@
 <template>
-    <button type="button" :disabled="disabled" @click="onClick" class="fe-button" :class="[computedClass]">
+    <button :type="htmlType" :disabled="disabled" class="fe-button" :class="[computedClass]">
         <slot></slot>
     </button>
 </template>
 <script lang="ts" setup>
-import { computed } from 'vue';
+import { ButtonHTMLAttributes, computed } from 'vue';
 
 const props = withDefaults(defineProps<{
     type?: "danger" | "primary" | "warning"
     ghost?: boolean
+    htmlType?: ButtonHTMLAttributes["type"]
     disabled?: boolean
     loading?: boolean
     dashed?: boolean
 }>(), {
+    htmlType: "button",
     ghost: false,
     disabled: false
 })
@@ -26,9 +28,4 @@ const computedClass = computed(() => {
     if (props.dashed) result.push(`fe-button--dashed`);
     return result
 })
-
-function onClick() {
-    console.log(111);
-    
-}
 </script>

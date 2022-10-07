@@ -32,5 +32,9 @@
     "license": "ISC",
     "dependencies": {
         "vue": "^3.2.37"
+    },
+    "devDependencies": {
+        "github-markdown-css": "^5.1.0",
+        "windicss": "^3.5.6"
     }
 }

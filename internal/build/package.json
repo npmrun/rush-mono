@@ -48,6 +48,7 @@
     "vite": "^2.9.15",
     "vite-plugin-dts": "^1.4.1",
     "vite-plugin-markdown": "^2.1.0",
+    "vite-plugin-windicss": "^1.8.8",
     "vue": "^3.2.38"
   }
 }
