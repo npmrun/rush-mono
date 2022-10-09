@@ -1,16 +1,16 @@
 <template>
     <div class="basic-demo">
         <fe-button>
-            啊啊啊按钮
+            测试按钮
         </fe-button>
         <fe-button loading>
             加载中
         </fe-button>
         <fe-button dashed>
-            啊啊啊按钮
+            测试按钮
         </fe-button>
         <fe-button disabled>
-            啊啊啊按钮
+            测试按钮
         </fe-button>
         <fe-button type="danger">
             按钮
