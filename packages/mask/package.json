@@ -13,9 +13,6 @@
     "files": [
         "dist"
     ],
-    "publishConfig": {
-        "registry": "http://lnpm.xieyaxin.top/"
-    },
     "main": "./dist/rush-mask.umd.js",
     "module": "./dist/rush-mask.es.js",
     "types": "./dist/index.d.ts",

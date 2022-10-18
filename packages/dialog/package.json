@@ -13,9 +13,6 @@
     "files": [
         "dist"
     ],
-    "publishConfig": {
-        "registry": "http://lnpm.xieyaxin.top/"
-    },
     "main": "./dist/rush-dialog.umd.js",
     "module": "./dist/rush-dialog.es.js",
     "types": "./dist/index.d.ts",
