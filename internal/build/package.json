@@ -50,5 +50,8 @@
     "vite-plugin-markdown": "^2.1.0",
     "vite-plugin-windicss": "^1.8.8",
     "vue": "^3.2.38"
+  },
+  "devDependencies": {
+    "windicss": "^3.5.6"
   }
 }

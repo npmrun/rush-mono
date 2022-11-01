@@ -1,6 +1,7 @@
 {
     "extends": "@internal/tsconfig/tsconfig.base.json",
     "compilerOptions": {
+        "composite": true,
         "target": "ES2015",
         "module": "ES2015",
         "baseUrl": ".",
@@ -8,9 +9,6 @@
             "@/*": ["src/*"]
         }
     },
-    "include": ["src"],
+    "include": ["src", "example", "windi.config.ts"],
     "exclude": ["node_modules"],
-    "references": [{
-        "path": "./tsconfig.example.json"
-    }]
 }

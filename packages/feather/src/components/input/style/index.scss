@@ -1,0 +1,7 @@
+@import '@/style/init';
+
+$input-cls: '#{$fe-prefix}-input';
+
+.#{$input-cls}{
+    display: inline-block;
+}
