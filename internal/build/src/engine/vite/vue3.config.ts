@@ -30,7 +30,8 @@ export default (isDev: boolean) => {
                 ),
             },
         },
-        plugins: [mdPlugin({mode: [ Mode.VUE ]}), vue({ isProduction: !isDev }), vueJsx(), dts(), libCss(), ...plugins],
+        // , dts({exclude: "example", outputDir: buildInfo.outDir})
+        plugins: [mdPlugin({mode: [ Mode.VUE ]}), vue({ isProduction: !isDev }), vueJsx(), libCss(), ...plugins],
         build: {
             sourcemap: 'inline',
             outDir: buildInfo.outDir,

@@ -25,7 +25,7 @@ export default (isDev: boolean) => {
                 '@': path.resolve(process.cwd(), './src')
             },
         },
-        plugins: [vue({ isProduction: !isDev }), vueJsx(), dts(), libCss(), ...plugins],
+        plugins: [vue({ isProduction: !isDev }), vueJsx(), dts() as any, libCss(), ...plugins],
         build: {
             sourcemap: 'inline',
             outDir: buildInfo.outDir,

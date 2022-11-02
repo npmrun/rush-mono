@@ -1,6 +1,7 @@
 interface IBuildInfo {
     engine: 'vite' | 'unbuild' | 'rollup'
     mode: 'components' | 'cli' | 'component' | 'test'
+    componentsName: string
     componentsDir: string
     componentsOutDir: string
     componentsPrefix: string

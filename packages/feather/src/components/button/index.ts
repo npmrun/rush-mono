@@ -1,5 +1,5 @@
 import component from './button.vue'
-import './style/index.scss'
+import './style/button.scss'
 import { withInstall } from '@/hooks'
 
 withInstall('button', component)

@@ -5,6 +5,7 @@
     "buildinfo": {
         "engine": "vite",
         "mode": "components",
+        "componentsName": "components",
         "componentsDir": "./src/components",
         "componentsOutDir": "./dist/components",
         "componentsPrefix": "feather",
@@ -20,8 +21,7 @@
     "files": [
         "dist"
     ],
-    "main": "./dist/feather-ui.umd.js",
-    "module": "./dist/feather-ui.es.js",
+    "main": "./dist/index.es.js",
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "build build",

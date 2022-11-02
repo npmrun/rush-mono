@@ -1,5 +1,5 @@
 import component from './input.vue'
-import './style/index.scss'
+import './style/input.scss'
 import { withInstall } from '@/hooks'
 
 withInstall('input', component)

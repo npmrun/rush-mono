@@ -7,6 +7,8 @@
         "docs:dev": "pnpm --filter @rush-mono/docs docs:dev",
         "docs:build": "pnpm --filter @rush-mono/docs docs:build",
         "dev": "turbo run dev --parallel",
+        "dev:dialog": "turbo run dev --filter @rush-ui/dialog",
+        "build:dialog": "turbo run build --filter @rush-ui/dialog",
         "dev:feather": "turbo run dev --filter feather-ui",
         "build:feather": "turbo run build --filter feather-ui",
         "build:test": "turbo run build --filter aatest",
