@@ -2,6 +2,31 @@
 
 $input-cls: '#{$fe-prefix}-input';
 
-.#{$input-cls}{
+@mixin init {
+    .#{$input-cls}__inner {
+        outline: none;
+        border: none;
+        &:focus {
+            outline: none;
+            border: none;
+        }
+    }
+}
+
+.#{$input-cls} {
     display: inline-block;
+    @include init;
+    border: 1px solid $primary-color;
+    height: 45px;
+    line-height: 45px;
+    &:focus {
+        border-color: $primary-color;
+        color: $primary-color;
+    }
+    &:focus:not(:active) {
+        box-shadow: 0 0 0 0.125em $primary-light-color;
+    }
+    .#{$input-cls}__inner {
+        
+    }
 }
