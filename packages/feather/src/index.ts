@@ -9,7 +9,7 @@ function install(app: App) {
     for (const key in componets) {
         const component = (componets as Record<string, Component>)[key]
         // @ts-ignore
-        const name = component.name || 'fe-' + key
+        const name = component.name || key
         app.component(name, component)
     }
 }
