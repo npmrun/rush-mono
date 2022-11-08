@@ -15,9 +15,6 @@
         "outDir": "./dist",
         "entry": "./src/index.ts"
     },
-    "publishConfig": {
-        "registry": "http://lnpm.xieyaxin.top/"
-    },
     "files": [
         "dist"
     ],
