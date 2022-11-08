@@ -16,7 +16,8 @@
         "entry": "./src/index.ts"
     },
     "files": [
-        "dist"
+        "dist",
+        "FeatherResolve.ts"
     ],
     "main": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
