@@ -1,6 +1,6 @@
 {
     "name": "feather-ui",
-    "version": "0.0.1-beta.1",
+    "version": "0.0.1-beta.2",
     "description": "feather-ui",
     "buildinfo": {
         "engine": "vite",
@@ -18,7 +18,7 @@
     "files": [
         "dist"
     ],
-    "main": "./dist/index.es.js",
+    "main": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "build build",
