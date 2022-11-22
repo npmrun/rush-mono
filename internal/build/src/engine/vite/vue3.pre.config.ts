@@ -18,7 +18,7 @@ export default (isDev: boolean) => {
         plugins: [
             vue({ isProduction: !isDev }),
             vueJsx(),
-            dts({ exclude: 'example', outputDir: buildInfo.outDir }) as any
+            dts({ exclude: 'example', outputDir: buildInfo.outDir })
         ],
         build: {
             sourcemap: 'inline',
