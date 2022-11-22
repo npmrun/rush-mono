@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "tsx ./scripts/dev.ts",
-    "build": "tsx ./scripts/build.ts"
+    "build": "tsx ./scripts/build.ts & tsc index.ts"
   },
   "license": "MIT",
   "buildOptions": {
