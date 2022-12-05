@@ -14,22 +14,22 @@
         "dist"
     ],
     "main": "./dist/rush-mask.umd.js",
-    "module": "./dist/rush-mask.es.js",
+    "module": "./dist/rush-mask.mjs",
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "build build",
+        "watch": "build build --watch",
         "dev": "build dev"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "dependencies": {
-        "vue": ">=3.2.0"
-    },
+    "dependencies": {},
     "peerDependencies": {
         "vue": ">=3.2.0"
     },
     "devDependencies": {
-        "less": "^4.1.3"
+        "less": "^4.1.3",
+        "vue": ">=3.2.0"
     }
 }

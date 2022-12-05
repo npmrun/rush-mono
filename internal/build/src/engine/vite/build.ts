@@ -8,8 +8,9 @@ import { buildInfo } from '@/parse'
 import FastGlob from 'fast-glob'
 import path from 'path'
 import rimraf from 'rimraf'
+import { RollupWatcher } from 'rollup'
 
-export default async function () {
+export default async function (options: any) {
     console.log(`清除输出文件夹`)
     rimraf.sync(buildInfo.outDir)
     if (buildInfo.mode === 'components' && buildInfo.componentsDir) {
@@ -36,7 +37,29 @@ export default async function () {
         await viteBuild(vue3Config(false))
     }
     if (buildInfo.mode === 'component') {
-        await viteBuild(vue3Component(false))
+        const out = await viteBuild(vue3Component(false, options))
+        console.log('Rollup is watching for changes...');
+        if(options && options.watch){
+            let watcher = out as RollupWatcher
+            watcher.on('event', event => {
+                switch (event.code) {
+                    case 'START':
+                        console.info('Rebuilding...');
+                        break;
+                    case 'BUNDLE_START':
+                        console.info('Bundling...');
+                        break;
+                    case 'BUNDLE_END':
+                        console.info('Bundled!');
+                        break;
+                    case 'END':
+                        console.info('Done!');
+                        break;
+                    case 'ERROR':
+                        console.error("Rollup error: ", event);
+                }
+            });
+        }
     }
     console.log(`打包完成`)
 }

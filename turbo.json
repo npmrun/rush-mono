@@ -5,6 +5,10 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
+    "watch": {
+        "dependsOn": ["^watch"],
+        "cache": false
+    },
     "dev": {
       "cache": false
     }

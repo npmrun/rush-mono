@@ -8,7 +8,7 @@ import { buildInfo, externals, globals } from '@/parse'
 import path from 'path'
 import WindiCSS from 'vite-plugin-windicss'
 
-export default (isDev: boolean) => {
+export default (isDev: boolean, options?: any) => {
     const plugins = []
     if(isDev){
         plugins.push(WindiCSS({
@@ -16,6 +16,15 @@ export default (isDev: boolean) => {
                 include: "example/**/*.vue"
             }
         }))
+    }
+    let watch: any = false
+    if(options && options.watch){
+        watch = {
+            buildDelay: 0,
+            clearScreen: true,
+            include: 'src/**',
+            skipWrite: false
+        }
     }
     return {
         root: process.cwd(),
@@ -31,6 +40,7 @@ export default (isDev: boolean) => {
             outDir: buildInfo.outDir,
             cssCodeSplit: false,
             emptyOutDir: false,
+            watch,
             lib: {
                 entry: buildInfo.entry,
                 name: buildInfo.name,

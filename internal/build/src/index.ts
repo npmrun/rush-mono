@@ -19,12 +19,13 @@ program
 
 program
     .command('build')
+    .option('--watch', '是否在文件变化时构建')
     .description('开始构建')
-    .action(() => {
+    .action((options) => {
         const engine = buildInfo.engine
         const mode = buildInfo.mode
         if (engine === 'vite') {
-            viteBuild()
+            viteBuild(options)
         }
         if (engine === 'rollup') {
             rollupBuild()
