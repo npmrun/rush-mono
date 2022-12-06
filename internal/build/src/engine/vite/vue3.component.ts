@@ -35,7 +35,7 @@ export default (isDev: boolean, options?: any) => {
             },
         },
         plugins: [vue({ isProduction: !isDev }), vueJsx(), dts({
-            exclude: ["env.d.ts"],
+            exclude: ["env.d.ts"]
         }), libCss(), ...plugins],
         build: {
             sourcemap: 'inline',

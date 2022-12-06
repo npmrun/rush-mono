@@ -14,7 +14,7 @@
         "dist"
     ],
     "main": "./dist/rush-dialog.umd.js",
-    "module": "./dist/rush-dialog.es.js",
+    "module": "./dist/rush-dialog.mjs",
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "build build",
