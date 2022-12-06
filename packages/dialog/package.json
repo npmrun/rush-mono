@@ -24,6 +24,10 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
+    "globals": {
+        "注释": "自定义依赖的全局变量别名，应该可以用扫描实现",
+        "@rush-ui/mask" :"rushMask"
+    },
     "dependencies": {
         "@rush-ui/mask": "workspace:*"
     },

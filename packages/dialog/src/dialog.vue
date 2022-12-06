@@ -15,7 +15,7 @@
  
 <script lang="ts" setup>
 import { onMounted, watch, ref, nextTick } from 'vue';
-import RushMask from '@rush-ui/mask';
+import RushMask from '@rush-ui/mask'; //import 会导出类型源码，而不是import("@rush-ui/mask")的类型
  
 const props = withDefaults(defineProps<{
     to?: string
