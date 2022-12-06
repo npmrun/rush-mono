@@ -23,7 +23,7 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@changesets/cli": "^2.25.0",
+        "@changesets/cli": "^2.25.2",
         "@internal/build": "workspace:*",
         "@internal/tsconfig": "workspace:*",
         "@utils/browser": "workspace:*",
