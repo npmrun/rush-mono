@@ -4,11 +4,7 @@
         "composite": true,
         "target": "ES2015",
         "module": "ES2015",
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["src/*"]
-        }
     },
-    "include": ["src", "example", "windi.config.ts"],
+    "include": ["example", "windi.config.ts"],
     "exclude": ["node_modules"],
 }

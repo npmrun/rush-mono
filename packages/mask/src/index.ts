@@ -1,4 +1,4 @@
-import RushMask from './index.vue'
+import RushMask from './mask.vue'
 import { App } from 'vue'
 
 RushMask.name = 'rush-mask'

@@ -6,10 +6,14 @@
       "outputs": ["dist/**"]
     },
     "watch": {
-        "dependsOn": ["^watch"],
-        "cache": false
+      "dependsOn": ["^watch"],
+      "cache": false
     },
     "dev": {
+      "cache": false
+    },
+    "dev:dialog": {
+      "dependsOn": ["^watch", "dev"],
       "cache": false
     }
   }

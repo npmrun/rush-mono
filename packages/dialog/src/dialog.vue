@@ -1,22 +1,22 @@
 <template>
     <teleport :to="to" :disabled="disabled">
-        <transition name="fade" @after-leave="close()">
-            <rush-mask v-model:show="isShow"></rush-mask>
+        <transition name="fade">
+            <rush-mask is-render v-model:show="isShow"></rush-mask>
         </transition>
-        <div class="niu-dialog__wrapper" v-show="isShowWraper" @click.stop="isShow = false">
+        <div class="niu-dialog__wrapper" v-if="isShowWraper" @click.stop="isShow = false">
             <transition name="slide-fade" @after-leave="close()">
-                <div class="niu-dialog__content" v-show="isShow" @click.stop>
+                <div class="niu-dialog__content" v-if="isShow" @click.stop>
                     <slot></slot>
-                </div>
+                </div> 
             </transition>
-        </div>
+        </div>    
     </teleport>
 </template>
-
+ 
 <script lang="ts" setup>
 import { onMounted, watch, ref, nextTick } from 'vue';
 import RushMask from '@rush-ui/mask';
-
+ 
 const props = withDefaults(defineProps<{
     to?: string
     disabled?: boolean
@@ -47,6 +47,7 @@ const isShowWraper = ref(false)
 
 function show() {
     isShowWraper.value = true
+    document.body.style.overflow="hidden"
     nextTick(()=>{
         isShow.value = true
     })
@@ -54,6 +55,7 @@ function show() {
 
 function hide() {
     isShow.value = false
+    document.body.style.overflow=""
 }
 
 function close() {
@@ -63,6 +65,8 @@ function close() {
 </script>
 
 <style lang="less" scoped>
+@import "./anim.less";
+
 .niu-dialog__wrapper {
     position: absolute;
     inset: 0;
@@ -71,35 +75,6 @@ function close() {
 
     .niu-dialog__content {
         margin: auto;
-        // position: absolute;
-        // left: 50%;
-        // top: 50%;
-        // transform: translate(-50%, -50%);
     }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-}
-
-/* 可以为进入和离开动画设置不同的持续时间和动画函数 */
-.slide-fade-enter-active {
-    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-}
-
-.slide-fade-leave-active {
-    transition: opacity 0.2s cubic-bezier(1, 0.5, 0.8, 1), transform 0.2s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-    transform: translateX(20px);
-    opacity: 0;
 }
 </style>

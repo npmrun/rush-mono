@@ -34,7 +34,9 @@ export default (isDev: boolean, options?: any) => {
                 '@': path.resolve(process.cwd(), './src')
             },
         },
-        plugins: [vue({ isProduction: !isDev }), vueJsx(), dts(), libCss(), ...plugins],
+        plugins: [vue({ isProduction: !isDev }), vueJsx(), dts({
+            exclude: ["env.d.ts"],
+        }), libCss(), ...plugins],
         build: {
             sourcemap: 'inline',
             outDir: buildInfo.outDir,

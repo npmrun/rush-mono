@@ -1,4 +1,4 @@
-import RushDialog from './index.vue'
+import RushDialog from './dialog.vue'
 import { App } from 'vue'
 
 RushDialog.name = 'rush-dialog'
@@ -7,3 +7,4 @@ RushDialog.install = function (app: App, options: any) {
 }
 export { RushDialog }
 export default RushDialog
+ 

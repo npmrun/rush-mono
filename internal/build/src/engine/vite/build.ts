@@ -35,11 +35,12 @@ export default async function (options: any) {
         //----单个组件打包END
         console.log(`全量${buildInfo.name}组件库`)
         await viteBuild(vue3Config(false))
+        console.log(`打包完成`)
     }
     if (buildInfo.mode === 'component') {
         const out = await viteBuild(vue3Component(false, options))
-        console.log('Rollup is watching for changes...');
         if(options && options.watch){
+            console.log('Rollup is watching for changes...');
             let watcher = out as RollupWatcher
             watcher.on('event', event => {
                 switch (event.code) {
@@ -59,7 +60,8 @@ export default async function (options: any) {
                         console.error("Rollup error: ", event);
                 }
             });
+        }else{
+            console.log(`打包完成`)
         }
     }
-    console.log(`打包完成`)
 }
