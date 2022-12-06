@@ -1,6 +1,6 @@
 packages:
   # all packages in direct subdirs of packages/
-  - 'packages/*'
+  - 'packages/**'
   - 'utils/*'
   - 'internal/*'
   - 'docs'
