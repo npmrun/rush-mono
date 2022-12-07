@@ -28,6 +28,7 @@
         "vue": ">=3.2.0"
     },
     "devDependencies": {
+        "@utils/common": "workspace:*",
         "less": "^4.1.3",
         "vue": "^3.2.37"
     }

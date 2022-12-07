@@ -7,6 +7,7 @@
         "docs:dev": "pnpm --filter @rush-mono/docs docs:dev",
         "docs:build": "pnpm --filter @rush-mono/docs docs:build",
         "dev": "turbo run dev --parallel",
+        "dev:adjust-line": "turbo run dev --filter @rush-ui/adjust-line",
         "dev:dialog": "turbo run dev:dialog --filter @rush-ui/dialog",
         "watch:mask": "turbo run watch --filter @rush-ui/mask",
         "build:dialog": "turbo run build --filter @rush-ui/dialog",
@@ -26,8 +27,6 @@
         "@changesets/cli": "^2.25.2",
         "@internal/build": "workspace:*",
         "@internal/tsconfig": "workspace:*",
-        "@utils/browser": "workspace:*",
-        "@utils/common": "workspace:*",
         "feather-ui": "workspace:*",
         "tsx": "^3.9.0",
         "turbo": "^1.5.5"

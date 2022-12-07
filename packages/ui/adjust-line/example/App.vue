@@ -1,11 +1,22 @@
 <template>
-    <div class="flex">
-        <div @click="show = !show">open</div>
-        <RushDialog v-model:show="show">
-            <div style="background-color: white;">
-                sada
+    <div class="flex h-500px">
+        <div class="h-1/1 w-1/1 border border-red-200 relative">
+            <RushAdjustLine></RushAdjustLine>
+            <RushAdjustLine direction="bottom"></RushAdjustLine>
+        </div>
+        <!-- <div class="h-1/1 w-1/1 flex border border-red-200 relative">
+            <div class="h-1/1 relative flex-1 w-0">
+                llllllllllllllllllllleft
+                <RushAdjustLine :target="nextContainer"></RushAdjustLine>
             </div>
-        </RushDialog>
+            <div class="h-1/1 relative" ref="nextContainer">
+                middle
+            </div>
+            <div class="h-1/1 relative">
+                right
+                <RushAdjustLine direction="left" :watch="nextContainer"></RushAdjustLine>
+            </div>
+        </div> -->
     </div>
 </template>
 
@@ -20,9 +31,11 @@ body,
 </style>
 
 <script lang="ts" setup>
-import RushDialog from '@/index';
+import RushAdjustLine from '@/index';
 import { ref } from 'vue';
 import { debounce } from "@utils/common"
+
+const nextContainer = ref()
 
 const a = debounce((a,b,c)=>{
     console.log(a,b,c);

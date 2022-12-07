@@ -1,4 +1,4 @@
-import RushAdjustLine from './dialog.vue'
+import RushAdjustLine from './adjust-line.vue'
 import { App } from 'vue'
 
 RushAdjustLine.name = 'rush-adjust-line'
