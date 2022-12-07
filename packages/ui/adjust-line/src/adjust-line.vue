@@ -111,6 +111,8 @@ function handle(target: HTMLElement) {
                 let nwidth = nextContainer.clientWidth
                 // let owidth = nwidth + width
                 let owidth = parentContainer.clientWidth
+                let wwidth = watchContainer?.clientWidth ?? 0
+   
                 if (isThree) {
                     owidth = nwidth + width
                 }
@@ -124,14 +126,12 @@ function handle(target: HTMLElement) {
                 document.onmousemove = function (e) {
                     let nowX = e.clientX
                     let w = 0
+                    let offset = startX - nowX
                     if (props.direction == 'left') {
-                        w = width + startX - nowX
+                        w = width + offset
                     }
                     if (props.direction == 'right') {
-                        w = width + nowX - startX
-                    }
-                    if (Math.abs(w - owidth / 2) <= 15) {
-                        w = owidth / 2
+                        w = width - offset
                     }
                     if (w >= owidth) {
                         w = owidth
@@ -139,27 +139,33 @@ function handle(target: HTMLElement) {
                     if (w <= 0) {
                         w = 0
                     }
-                    if (Math.abs(w - owidth) < 50) {
-                        w = owidth
-                    }
-                    if (Math.abs(w) < 50) {
-                        w = 0
-                    }
-                    if(!isThree && watchContainer){
-                        if(w + watchContainer.clientWidth - parentContainer.clientWidth>0){
-                            w = parentContainer.clientWidth - watchContainer.clientWidth
-                        }
-                    }
+                    // if (Math.abs(w - owidth / 2) <= 10) {
+                    //     w = owidth / 2
+                    // }
+                    // if (Math.abs(w - owidth) < 10) {
+                    //     w = owidth
+                    // }
+                    // if (Math.abs(w) < 10) {
+                    //     w = 0
+                    // }
                     document.body.style.pointerEvents = 'none'
                     document.body.style.userSelect = 'none'
-                    if (container === nextContainer) {
-                        container.style.width = w + 'px'
-                        // container.style.minWidth = w + 'px'
-                        // container.style.flexBasis = w + 'px'
-                    } else {
-                        nextContainer.style.width = (owidth - w) + 'px'
-                        // nextContainer.style.minWidth = (owidth-w) + 'px'
-                        // nextContainer.style.flexBasis = (owidth - w) + 'px'
+                    if(!isThree && watchContainer){
+                        let ww = wwidth - offset
+                        if(width >= -offset){
+                            watchContainer.style.width = ww + 'px'
+                        }
+                        nextContainer.style.width = w + 'px'
+                    }else{
+                        if(!isThree){
+                            nextContainer.style.width = w + 'px'
+                            // nextContainer.style.minWidth = w + 'px'
+                            // nextContainer.style.flexBasis = w + 'px'
+                        }else{
+                            nextContainer.style.width = (owidth - w) + 'px'
+                            // nextContainer.style.minWidth = (owidth-w) + 'px'
+                            // nextContainer.style.flexBasis = (owidth - w) + 'px'
+                        }
                     }
                 }
                 document.onmouseup = function (e) {
@@ -186,6 +192,7 @@ function handle(target: HTMLElement) {
                 let nheight = nextContainer.clientHeight
                 // let oheight = nheight + height
                 let oheight = parentContainer.clientHeight
+                let hheight = watchContainer?.clientHeight ?? 0
                 if(isThree){
                     oheight = nheight + height
                 }
@@ -200,14 +207,12 @@ function handle(target: HTMLElement) {
                 document.onmousemove = function (e) {
                     let nowY = e.clientY
                     let h = 0
+                    let offset = startY - nowY
                     if (props.direction == 'top') {
                         h = height + startY - nowY
                     }
                     if (props.direction == 'bottom') {
-                        h = height + nowY - startY
-                    }
-                    if (Math.abs(h - oheight / 2) <= 15) {
-                        h = oheight / 2
+                        h = height - offset
                     }
                     if (h >= oheight) {
                         h = oheight
@@ -215,27 +220,33 @@ function handle(target: HTMLElement) {
                     if (h <= 0) {
                         h = 0
                     }
-                    if (Math.abs(h - oheight) < 50) {
-                        h = oheight
-                    }
-                    if (Math.abs(h) < 50) {
-                        h = 0
-                    }
-                    if(!isThree && watchContainer){
-                        if(h + watchContainer.clientHeight - parentContainer.clientHeight>0){
-                            h = parentContainer.clientHeight - watchContainer.clientHeight
-                        }
-                    }
+                    // if (Math.abs(h - oheight / 2) <= 15) {
+                    //     h = oheight / 2
+                    // }
+                    // if (Math.abs(h - oheight) < 50) {
+                    //     h = oheight
+                    // }
+                    // if (Math.abs(h) < 50) {
+                    //     h = 0
+                    // }
                     document.body.style.pointerEvents = 'none'
                     document.body.style.userSelect = 'none'
-                    if (container === nextContainer) {
-                        container.style.height = h + 'px'
-                        // container.style.minWidth = w + 'px'
-                        // container.style.flexBasis = h + 'px'
-                    } else {
-                        nextContainer.style.height = (oheight - h) + 'px'
-                        // nextContainer.style.minWidth = (owidth-w) + 'px'
-                        // nextContainer.style.flexBasis = (oheight - h) + 'px'
+                    if(!isThree && watchContainer){
+                        let hh = hheight - offset
+                        if(height >= -offset){
+                            watchContainer.style.height = hh + 'px'
+                        }
+                        nextContainer.style.height = h + 'px'
+                    }else{
+                        if(!isThree){
+                            nextContainer.style.height = h + 'px'
+                            // nextContainer.style.minHeight = h + 'px'
+                            // nextContainer.style.flexBasis = h + 'px'
+                        }else{
+                            nextContainer.style.height = (oheight - h) + 'px'
+                            // nextContainer.style.minHeight = (oheight - h) + 'px'
+                            // nextContainer.style.flexBasis = (oheight - h) + 'px'
+                        }
                     }
                 }
                 document.onmouseup = function (e) {

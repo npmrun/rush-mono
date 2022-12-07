@@ -1,10 +1,10 @@
 <template>
-    <div class="flex h-500px">
+    <div class="h-500px w-500px mx-auto">
         <div class="h-1/1 w-1/1 border border-red-200 relative">
             <RushAdjustLine></RushAdjustLine>
             <RushAdjustLine direction="bottom"></RushAdjustLine>
         </div>
-        <!-- <div class="h-1/1 w-1/1 flex border border-red-200 relative">
+        <div class="h-1/1 w-1/1 flex border border-red-200 relative">
             <div class="h-1/1 relative flex-1 w-0">
                 llllllllllllllllllllleft
                 <RushAdjustLine :target="nextContainer"></RushAdjustLine>
@@ -16,7 +16,22 @@
                 right
                 <RushAdjustLine direction="left" :watch="nextContainer"></RushAdjustLine>
             </div>
-        </div> -->
+            <RushAdjustLine direction="bottom"></RushAdjustLine>
+        </div>
+        <div class="h-1/1 w-1/1 flex flex-col border border-red-200 relative">
+            <div class="relative flex-1 h-0">
+                top
+                <RushAdjustLine direction="bottom" :target="nextContainer2"></RushAdjustLine>
+            </div>
+            <div class="relative" ref="nextContainer2">
+                middle
+            </div>
+            <div class="relative">
+                bottom
+                <RushAdjustLine direction="top" :watch="nextContainer2"></RushAdjustLine>
+            </div>
+            <RushAdjustLine direction="bottom"></RushAdjustLine>
+        </div>
     </div>
 </template>
 
@@ -36,6 +51,7 @@ import { ref } from 'vue';
 import { debounce } from "@utils/common"
 
 const nextContainer = ref()
+const nextContainer2 = ref()
 
 const a = debounce((a,b,c)=>{
     console.log(a,b,c);

@@ -18,7 +18,8 @@
         "dev:cli": "turbo run dev --filter @internal/build",
         "build:cli": "turbo run build --filter @internal/build",
         "dev:components": "turbo run dev --filter @rush-mono/components",
-        "release": "changeset"
+        "commit": "changeset",
+        "version": "changeset version"
     },
     "keywords": [],
     "author": "",
