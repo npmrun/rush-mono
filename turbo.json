@@ -5,14 +5,9 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
-    "watch": {
-      "dependsOn": ["^watch"],
-      "cache": false
-    },
-    "dev": {
-      "cache": false
-    },
-    "dev:dialog": {
+    "watch": {},
+    "dev": {},
+    "develop": {
       "dependsOn": ["^watch", "dev"],
       "cache": false
     }

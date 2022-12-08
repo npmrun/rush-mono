@@ -4,20 +4,22 @@
         "preinstall": "npx only-allow pnpm",
         "postinstall": "pnpm build:cli",
         "build:site": "pnpm build:cli && pnpm install && pnpm build && pnpm docs:build",
+        
         "docs:dev": "pnpm --filter @rush-mono/docs docs:dev",
         "docs:build": "pnpm --filter @rush-mono/docs docs:build",
-        "dev": "turbo run dev --parallel",
-        "dev:adjust-line": "turbo run dev --filter @rush-ui/adjust-line",
-        "dev:dialog": "turbo run dev:dialog --filter @rush-ui/dialog",
-        "watch:mask": "turbo run watch --filter @rush-ui/mask",
-        "build:dialog": "turbo run build --filter @rush-ui/dialog",
-        "dev:feather": "turbo run dev --filter feather-ui",
-        "build:feather": "turbo run build --filter feather-ui",
-        "build:test": "turbo run build --filter aatest",
-        "build": "turbo run build --filter=./packages/*",
+
+        "develop:ui": "npm run buildin:develop",
+        "build:ui": "npm run buildin:build",
+        "buildin:develop:ui": "turbo run develop --filter @rush-ui/%npm_config_repo%",
+        "buildin:build:ui": "turbo run build --filter @rush-ui/%npm_config_repo%",
+
+        "develop": "npm run buildin:develop",
+        "build": "npm run buildin:build",
+        "buildin:develop": "turbo run develop --filter %npm_config_repo%",
+        "buildin:build": "turbo run build --filter %npm_config_repo%",
+
         "dev:cli": "turbo run dev --filter @internal/build",
         "build:cli": "turbo run build --filter @internal/build",
-        "dev:components": "turbo run dev --filter @rush-mono/components",
         "commit": "changeset",
         "version": "changeset version"
     },
@@ -28,7 +30,6 @@
         "@changesets/cli": "^2.25.2",
         "@internal/build": "workspace:*",
         "@internal/tsconfig": "workspace:*",
-        "feather-ui": "workspace:*",
         "tsx": "^3.9.0",
         "turbo": "^1.5.5"
     },

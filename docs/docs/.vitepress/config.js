@@ -1,4 +1,4 @@
-import { componentPreview } from '@vitepress-demo-preview/plugin'
+import { componentPreview, containerPreview } from '@vitepress-demo-preview/plugin'
 
 export default {
     lang: 'zh-CN',
@@ -56,8 +56,9 @@ export default {
         },
     },
     markdown: {
-        theme: 'dracula',
+        // theme: 'dracula',
         config(md) {
+            md.use(containerPreview)
             md.use(componentPreview)
         },
     },

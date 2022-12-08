@@ -52,13 +52,15 @@ import { nextTick, onMounted, ref, watch } from 'vue';
 
 const adjustLineEL = ref<HTMLElement>()
 
+type IProps = {
+    direction?: 'left' | 'right' | 'top' | 'bottom'
+    target?: HTMLElement
+    watch?: HTMLElement
+    mid?: string
+}
+
 const props = withDefaults(
-    defineProps<{
-        direction?: 'left' | 'right' | 'top' | 'bottom'
-        target?: HTMLElement
-        watch?: HTMLElement
-        mid?: string
-    }>(),
+    defineProps<IProps>(),
     {
         direction: 'right',
     }
