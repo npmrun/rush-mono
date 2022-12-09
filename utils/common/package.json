@@ -1,5 +1,6 @@
 {
   "name": "@utils/common",
   "private": true,
+  "module": "./index.ts",
   "license": "MIT"
 }

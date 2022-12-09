@@ -16,6 +16,7 @@
 <script lang="ts" setup>
 import { onMounted, watch, ref, nextTick } from 'vue';
 import RushMask from '@rush-ui/mask'; //import 会导出类型源码，而不是import("@rush-ui/mask")的类型
+import { setStyle } from '@utils/browser/dom'; //import 会导出类型源码，而不是import("@rush-ui/mask")的类型
 // https://github.com/microsoft/TypeScript/issues/42873
 
 const props = withDefaults(defineProps<{
@@ -48,7 +49,9 @@ const isShowWraper = ref(false)
 
 function show() {
     isShowWraper.value = true
-    document.body.style.overflow="hidden"
+    setStyle(document.body, {
+        overflow: "hidden"
+    })
     nextTick(()=>{
         isShow.value = true
     })
@@ -56,7 +59,9 @@ function show() {
 
 function hide() {
     isShow.value = false
-    document.body.style.overflow=""
+    setStyle(document.body, {
+        overflow: ""
+    })
 }
 
 function close() {

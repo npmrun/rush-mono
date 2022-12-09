@@ -26,7 +26,7 @@
     "license": "ISC",
     "globals": {
         "注释": "自定义依赖的全局变量别名，应该可以用扫描实现",
-        "@rush-ui/mask" :"rushMask"
+        "@rush-ui/mask": "rushMask"
     },
     "dependencies": {
         "@rush-ui/mask": "workspace:*"
@@ -35,6 +35,8 @@
         "vue": ">=3.2.0"
     },
     "devDependencies": {
+        "@utils/browser": "workspace:*",
+        "@utils/common": "workspace:*",
         "less": "^4.1.3",
         "vue": "^3.2.37"
     }

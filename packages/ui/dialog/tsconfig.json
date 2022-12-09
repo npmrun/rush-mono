@@ -3,15 +3,17 @@
     "compilerOptions": {
         "target": "ES2015",
         "module": "ES2015",
-        "rootDir": "./src",
+        "rootDirs": ["src"],
         "baseUrl": ".",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["src/*"],
+            "@utils/*": ["node_modules/@utils/*"]
         }
     },
     "include": ["src", "env.d.ts"],
-    "exclude": ["node_modules"],
-    "references": [{
-        "path": "./tsconfig.example.json"
-    }]
+    "references": [
+        {
+            "path": "./tsconfig.example.json"
+        }
+    ]
 }

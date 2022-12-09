@@ -155,11 +155,15 @@ importers:
   packages/ui/dialog:
     specifiers:
       '@rush-ui/mask': workspace:*
+      '@utils/browser': workspace:*
+      '@utils/common': workspace:*
       less: ^4.1.3
       vue: ^3.2.37
     dependencies:
       '@rush-ui/mask': link:../mask
     devDependencies:
+      '@utils/browser': link:../../../utils/browser
+      '@utils/common': link:../../../utils/common
       less: 4.1.3
       vue: 3.2.45
 

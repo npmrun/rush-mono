@@ -6,6 +6,8 @@
 
 使用`pnpm publish`发布
 
-pnpm develop:ui --repo=adjust-line
+pnpm dev:ui --repo=adjust-line
 
-pnpm develop --repo=feather-ui
+pnpm dev --repo=feather-ui
+
+<!-- "^watch": "同时运行子依赖的话会导致dev已经完成了，而watch还没编译完，导致dev时获取不到模块而报错。", -->
