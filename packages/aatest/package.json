@@ -19,6 +19,7 @@
     },
     "scripts": {
         "build": "build build",
+        "test": "build test",
         "dev": "build dev"
     },
     "keywords": [],

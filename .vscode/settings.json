@@ -1,0 +1,3 @@
+{
+    "jestrunner.jestCommand": "pnpm run test_dev --" // -- 表示传递给下一个命令的
+}

@@ -16,9 +16,11 @@
         "buildin:build:ui": "pnpm --filter @rush-ui/%npm_config_repo% build",
 
         "dev": "npm run buildin:dev",
+        "test": "npm run buildin:test",
         "watch": "npm run buildin:watch",
         "build": "npm run buildin:build",
         "buildin:dev": "pnpm --filter %npm_config_repo% dev",
+        "buildin:test": "pnpm --filter %npm_config_repo% test",
         "buildin:watch": "pnpm --filter %npm_config_repo% watch",
         "buildin:build": "pnpm --filter %npm_config_repo% build",
 
@@ -32,7 +34,8 @@
         "dev:cli": "turbo run dev --filter @internal/build",
         "build:cli": "turbo run build --filter @internal/build",
         "commit": "changeset",
-        "version": "changeset version"
+        "version": "changeset version",
+        "test_dev": "build test"
     },
     "keywords": [],
     "author": "",

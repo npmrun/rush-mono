@@ -3,6 +3,7 @@ import { build as viteBuild, dev as viteDev } from './engine/vite'
 import { build as rollupBuild, dev as rollupDev } from './engine/rollup'
 import unbuildBuild from './engine/unbuild'
 import { buildInfo } from '@/parse'
+import jest from "jest"
 
 const program = new Command('build')
 program.version('0.0.1', '-v, --version').description('查看当前版本号')
@@ -11,10 +12,10 @@ program.usage('<token>')
 program.showHelpAfterError('( build -h 查看帮助信息)')
 
 program
-    .argument('<detail>')
-    .description('查看详情')
-    .action((token: string) => {
-        console.log(token)
+    .command('test')
+    .description('测试')
+    .action(async ({},command) => {
+        await jest.run(command.args ?? [])
     })
 
 program
