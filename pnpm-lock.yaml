@@ -26,7 +26,7 @@ importers:
     devDependencies:
       '@vitepress-demo-preview/component': 1.1.2_e2fecw327w2abq7tfekblizolm
       '@vitepress-demo-preview/plugin': 1.1.6_e2fecw327w2abq7tfekblizolm
-      feather-ui: link:../packages/feather
+      feather-ui: link:../packages/feather-ui
       vitepress: 1.0.0-alpha.13
       vue: 3.2.45
 
@@ -104,7 +104,7 @@ importers:
   internal/tsconfig:
     specifiers: {}
 
-  packages/feather:
+  packages/feather-ui:
     specifiers:
       github-markdown-css: ^5.1.0
       vue: ^3.2.39
