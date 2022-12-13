@@ -1,5 +1,5 @@
-import { defineConfig } from '@internal/build'
+import { defineConfig, FullConfig } from '@internal/build'
 
 export default defineConfig({
     preflight: false
-})
+}) as FullConfig

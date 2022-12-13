@@ -2,5 +2,8 @@
   "name": "@utils/browser",
   "private": true,
   "module": "./index.ts",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "build test"
+  }
 }

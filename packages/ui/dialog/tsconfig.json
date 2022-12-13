@@ -10,7 +10,7 @@
             "@utils/*": ["node_modules/@utils/*"]
         }
     },
-    "include": ["src", "env.d.ts"],
+    "include": ["src", "env.d.ts", "jest.config.ts"],
     "references": [
         {
             "path": "./tsconfig.example.json"
