@@ -1,20 +1,20 @@
 {
-    "name": "@rush-ui/adjust-line",
+    "name": "@rush-ui/<%= uiName %>",
     "version": "0.0.1",
     "description": "",
     "buildinfo": {
         "engine": "vite",
         "mode": "component",
-        "fileName": "rush-adjust-line",
-        "name": "rushAdjustLine",
+        "fileName": "<%= fileName %>",
+        "name": "<%= globalName %>",
         "outDir": "./dist",
         "entry": "./src/index.ts"
     },
     "files": [
         "dist"
     ],
-    "main": "./dist/rush-adjust-line.umd.js",
-    "module": "./dist/rush-adjust-line.mjs",
+    "main": "./dist/<%= fileName %>.umd.js",
+    "module": "./dist/<%= fileName %>.mjs",
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "build build",

@@ -1,34 +1,30 @@
 {
     "private": true,
     "scripts": {
+        "new": "tsx scripts/new.ts",
         "preinstall": "npx only-allow pnpm",
         "postinstall": "pnpm build:cli",
         "build:site": "pnpm build:cli && pnpm install && pnpm build && pnpm docs:build",
-        
         "docs:dev": "pnpm --filter @rush-mono/docs docs:dev",
         "docs:build": "pnpm --filter @rush-mono/docs docs:build",
-
         "dev:ui": "npm run buildin:dev:ui",
         "watch:ui": "npm run buildin:watch:ui",
         "build:ui": "npm run buildin:build:ui",
         "buildin:dev:ui": "turbo run dev --filter @rush-ui/%npm_config_repo%",
         "buildin:watch:ui": "turbo run watch --filter @rush-ui/%npm_config_repo%",
         "buildin:build:ui": "turbo run build --filter @rush-ui/%npm_config_repo%",
-
         "dev": "npm run buildin:dev",
         "watch": "npm run buildin:watch",
         "build": "npm run buildin:build",
         "buildin:dev": "turbo run dev --filter %npm_config_repo%",
         "buildin:watch": "turbo run watch --filter %npm_config_repo%",
         "buildin:build": "turbo run build --filter %npm_config_repo%",
-
         "dev:dep": "npm run buildin:dev:dep",
         "watch:dep": "npm run buildin:watch:dep",
         "build:dep": "npm run buildin:build:dep",
         "buildin:dev:dep": "turbo run dev --filter %npm_config_repo%",
         "buildin:watch:dep": "turbo run watch --filter %npm_config_repo%",
         "buildin:build:dep": "turbo run build --filter %npm_config_repo%",
-
         "dev:cli": "turbo run dev --filter @internal/build",
         "build:cli": "turbo run build --filter @internal/build",
         "commit": "changeset",
@@ -41,6 +37,14 @@
         "@changesets/cli": "^2.25.2",
         "@internal/build": "workspace:*",
         "@internal/tsconfig": "workspace:*",
+        "@types/ejs": "^3.1.1",
+        "@types/fs-extra": "^9.0.13",
+        "@types/inquirer": "^9.0.3",
+        "@types/node": "^18.11.9",
+        "chalk": "^5.1.2",
+        "ejs": "^3.1.8",
+        "fs-extra": "^10.1.0",
+        "inquirer": "^9.1.4",
         "tsx": "^3.9.0",
         "turbo": "^1.5.5"
     },

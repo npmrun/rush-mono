@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "Node",
+        "target": "ES2015",
+        "module": "CommonJS",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "resolveJsonModule": true,
+    },
+    "include": ["scripts"],
+    "exclude": ["node_modules"]
+}

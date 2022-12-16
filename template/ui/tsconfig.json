@@ -1,0 +1,17 @@
+{
+    "extends": "@internal/tsconfig/tsconfig.base.json",
+    "compilerOptions": {
+        "target": "ES2015",
+        "module": "ES2015",
+        "rootDir": "./src",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    },
+    "include": ["src", "env.d.ts"],
+    "exclude": ["node_modules"],
+    "references": [{
+        "path": "./tsconfig.example.json"
+    }]
+}
