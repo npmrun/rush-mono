@@ -41,7 +41,7 @@ importers:
       vue: ^3.2.39
     devDependencies:
       '@vitepress-demo-preview/component': 1.1.2_e2fecw327w2abq7tfekblizolm
-      '@vitepress-demo-preview/plugin': 1.1.6_e2fecw327w2abq7tfekblizolm
+      '@vitepress-demo-preview/plugin': 1.1.6_f6j4rfguf2rtk2up7qpcfqe5p4
       feather-ui: link:../packages/feather-ui
       vitepress: 1.0.0-alpha.13
       vue: 3.2.45
@@ -188,6 +188,16 @@ importers:
       less: ^4.1.3
       vue: '>=3.2.0'
     devDependencies:
+      less: 4.1.3
+      vue: 3.2.45
+
+  packages/ui/tree:
+    specifiers:
+      '@utils/common': workspace:*
+      less: ^4.1.3
+      vue: ^3.2.37
+    devDependencies:
+      '@utils/common': link:../../../utils/common
       less: 4.1.3
       vue: 3.2.45
 
@@ -1344,9 +1354,10 @@ packages:
       vue: 3.2.45
     dev: true
 
-  /@vitepress-demo-preview/plugin/1.1.6_e2fecw327w2abq7tfekblizolm:
+  /@vitepress-demo-preview/plugin/1.1.6_f6j4rfguf2rtk2up7qpcfqe5p4:
     resolution: {integrity: sha512-7T+r6ER0Zeis71Ky53xH2pznlhDOongF3s9KHfz+7DHx9W3OTY6rMF6VQB/7nwDXaTuEPwREYBgH1o+G+KGJJQ==}
     peerDependencies:
+      markdown-it-container: ^3.0.0
       vitepress: '*'
       vue: ^3.2.0
     dependencies:
@@ -4933,7 +4944,6 @@ packages:
       sass: 1.56.1
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /vitepress/1.0.0-alpha.13:
     resolution: {integrity: sha512-gCbKb+6o0g5wHt2yyqBPk7FcvrB+MfwGtg1JMS5p99GTQR87l3b7symCl8o1ecv7MDXwJ2mPB8ZrYNLnQAJxLQ==}

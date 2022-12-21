@@ -1,0 +1,35 @@
+{
+    "name": "@rush-ui/tree",
+    "version": "0.0.1",
+    "description": "",
+    "buildinfo": {
+        "engine": "vite",
+        "mode": "component",
+        "fileName": "rush-tree",
+        "name": "rushTree",
+        "outDir": "./dist",
+        "entry": "./src/index.ts"
+    },
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/rush-tree.umd.js",
+    "module": "./dist/rush-tree.mjs",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "build": "build build",
+        "watch": "build build --watch",
+        "dev": "build dev"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "peerDependencies": {
+        "vue": ">=3.2.0"
+    },
+    "devDependencies": {
+        "@utils/common": "workspace:*",
+        "less": "^4.1.3",
+        "vue": "^3.2.37"
+    }
+}
