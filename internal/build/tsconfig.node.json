@@ -4,6 +4,7 @@
     "composite": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "module": "ESNext",
   },
   "include": ["scripts", "package.json"]

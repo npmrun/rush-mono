@@ -59,3 +59,15 @@
     ]
 }
 ```
+
+-`unbuild` 
+构建库
+
+```
+{
+    "engine": "unbuild",
+    "name": "cloud",
+    "outDir": "./dist",
+    "entry": "./src/index.ts"
+}
+```
