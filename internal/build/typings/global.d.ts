@@ -10,4 +10,7 @@ interface IBuildInfo {
     name: string
     outDir: string
     entry: string
+
+    varname?:string
+    filename?:string
 }

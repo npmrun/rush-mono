@@ -10,25 +10,22 @@ import {
 
 export default (isDev: boolean) => {
     return defineBuildConfig({
-        // hooks: {
-        //     'rollup:options'(ctx, options) {
-        //         if (
-        //             options.output &&
-        //             Array.isArray(options.output) &&
-        //             options.output.length
-        //         ) {
-        //             options.output = options.output.filter(
-        //                 (v) => v.format !== 'cjs'
-        //             )
-        //             options.output[0].entryFileNames = '[name].js'
-        //             const one = _.cloneDeep(options.output[0])
-        //             one.entryFileNames = '[name].umd.js'
-        //             one.format = 'umd'
-        //             one.name = buildInfo.name
-        //             options.output.push(one)
-        //         }
-        //     },
-        // },
+        hooks: {
+            'rollup:options'(ctx, options) {
+                if (
+                    options.output &&
+                    Array.isArray(options.output) &&
+                    options.output.length
+                ) {
+                    const one = _.cloneDeep(options.output[0])
+                    one.entryFileNames = '[name].umd.js'
+                    one.format = 'umd'
+                    one.name = buildInfo.varname ?? buildInfo.filename
+                    options.output.push(one)
+                }
+            },
+        },
+        stub: isDev, // stub模式适合nodejs，不适合浏览器，考虑换成vite或者rollup
         declaration: true,
         dependencies: dependencies,
         devDependencies: devDependencies,
@@ -36,7 +33,7 @@ export default (isDev: boolean) => {
         externals: externals,
         entries: [
             {
-                name: buildInfo.name,
+                name: buildInfo.filename,
                 input: buildInfo.entry,
                 outDir: buildInfo.outDir
             },

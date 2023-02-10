@@ -1,5 +1,7 @@
 ## 打包模式
 
+字段buildinfo
+
 -   `vite` + `components`  
 组件库打包
 ```
@@ -66,7 +68,8 @@
 ```
 {
     "engine": "unbuild",
-    "name": "cloud",
+    "filename": "my-lib",
+    "varname": "myLib",
     "outDir": "./dist",
     "entry": "./src/index.ts"
 }

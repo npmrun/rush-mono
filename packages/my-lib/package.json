@@ -1,0 +1,20 @@
+{
+  "name": "my-lib",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "node dist/myLib.cjs",
+    "build": "build build",
+    "dev": "build dev"
+  },
+  "buildinfo": {
+    "engine": "unbuild",
+    "filename": "fullpage",
+    "varname": "FullPage",
+    "outDir": "./dist",
+    "entry": "./src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
