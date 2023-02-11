@@ -1,6 +1,6 @@
 interface IBuildInfo {
     engine: 'vite' | 'unbuild' | 'rollup'
-    mode: 'components' | 'cli' | 'component' | 'test'
+    mode: 'components' | 'cli' | 'component' | 'test' | 'module'
     componentsName: string
     componentsDir: string
     componentsOutDir: string
@@ -13,4 +13,6 @@ interface IBuildInfo {
 
     varname?:string
     filename?:string
+    format?:string[]
+    watch?:string
 }

@@ -1,7 +1,7 @@
 import path from "path"
 import { ModuleFormat, OutputOptions } from "rollup"
 import pkg from "../package.json"
-import { terser } from "rollup-plugin-terser"
+import terser from "@rollup/plugin-terser"
 
 let isProd = process.env.NODE_ENV === "production"
 function resolvePath(...argu: string[]) {

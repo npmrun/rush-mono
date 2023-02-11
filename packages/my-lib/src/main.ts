@@ -1,5 +1,10 @@
 import { Scroll, throttle, debounce, judge, onresize } from "./util";
 
+interface IOptions {
+    el: string | null;
+    callback: (current: number, number: number) => void;
+}
+
 function $(selector: string): HTMLElement {
   return <HTMLElement>document.querySelector(selector);
 }
@@ -11,13 +16,8 @@ function setStyle<T extends any>(element: HTMLElement, style: T): void {
       element.style[key] = prop;
     }
   }
-}
-
-interface IOptions {
-  el: string | null;
-  callback: (current:number,number:number) => void;
-}
-
+}   
+ 
 export default class FullPage {
   private options: IOptions = { el: null,callback:()=>void(0) };
   private el: HTMLElement;
@@ -26,7 +26,7 @@ export default class FullPage {
   private width: number = 0;
   private height: number = 0;
   private current: number = 0;
-  private pages: number = 0;
+  private pages: number = 0; 
   private debounceInit = debounce(this.init, this, 200);
 
   constructor(options: IOptions) {

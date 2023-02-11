@@ -8,11 +8,14 @@
     "dev": "build dev"
   },
   "buildinfo": {
-    "engine": "unbuild",
+    "engine": "rollup",
+    "mode": "module",
     "filename": "fullpage",
     "varname": "FullPage",
     "outDir": "./dist",
-    "entry": "./src/main.ts"
+    "entry": "./src/main.ts",
+    "watch": "es",
+    "format": ["es" , "umd" , "cjs"]
   },
   "keywords": [],
   "author": "",

@@ -49,8 +49,8 @@
       </div>
       <div class="indicator"></div>
     </div>
-    <script src="../dist/fullpage.umd.js"></script>
-    <script>
+    <script type="module">
+      import FullPage from "../dist/fullpage.es.mjs"
       new FullPage({
         el: ".wrap",
         scrollCB: function (current, last) {

@@ -74,3 +74,16 @@
     "entry": "./src/index.ts"
 }
 ```
+
+-`rollup` + `module`
+构建库
+{
+    "engine": "rollup",
+    "mode": "module",
+    "filename": "fullpage",
+    "varname": "FullPage",
+    "outDir": "./dist",
+    "entry": "./src/main.ts",
+    "watch": "es",
+    "format": ["es" , "umd" , "cjs"]
+  }

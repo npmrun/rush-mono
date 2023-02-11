@@ -7,7 +7,7 @@ import alias from '@rollup/plugin-alias'
 import replace from '@rollup/plugin-replace'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 
 function resolvePath(...argu: string[]) {
     return path.resolve(process.cwd(), ...argu)

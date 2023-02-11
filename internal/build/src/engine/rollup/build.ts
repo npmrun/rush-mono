@@ -1,6 +1,7 @@
 import { OutputOptions, rollup, RollupOptions } from 'rollup'
 import _ from 'lodash'
 import cliConfig from './cli.config'
+import moduleConfig from './module.config'
 import testConfig from './test.config'
 import chalk from 'chalk'
 import { buildInfo } from '@/parse'
@@ -13,6 +14,11 @@ export default async function () {
     }
     if (buildInfo.mode === 'cli') {
         config = cliConfig(false)
+    }
+    if (buildInfo.mode === "module") {
+        config = moduleConfig(false)
+    } else {
+        console.warn("未匹配到任何模式")
     }
     const bundle = await rollup(config)
     if (!config.output) return
