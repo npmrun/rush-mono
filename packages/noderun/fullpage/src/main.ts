@@ -1,8 +1,8 @@
 import { Scroll, throttle, debounce, judge, onresize } from "./util";
 
 interface IOptions {
-    el: string | null;
-    callback: (current: number, number: number) => void;
+  el: string | null;
+  callback: (current: number, number: number) => void;
 }
 
 function $(selector: string): HTMLElement {
@@ -16,17 +16,17 @@ function setStyle<T extends any>(element: HTMLElement, style: T): void {
       element.style[key] = prop;
     }
   }
-}   
- 
+}
+
 export default class FullPage {
-  private options: IOptions = { el: null,callback:()=>void(0) };
+  private options: IOptions = { el: null, callback: () => void (0) };
   private el: HTMLElement;
   private elBlock: NodeListOf<HTMLElement>;
 
   private width: number = 0;
   private height: number = 0;
   private current: number = 0;
-  private pages: number = 0; 
+  private pages: number = 0;
   private debounceInit = debounce(this.init, this, 200);
 
   constructor(options: IOptions) {
@@ -40,7 +40,7 @@ export default class FullPage {
       throw new Error("没有匹配到元素");
       return;
     }
-    this.el = $(this.options.el+' .box');
+    this.el = $(this.options.el + ' .box');
     this.elBlock = $(this.options.el).querySelectorAll(".block");
 
     this.init();
@@ -55,25 +55,29 @@ export default class FullPage {
   private init() {
     this.pages = 0;
     this.height = 0;
-    this.width = 0; 
-    setStyle(document.body,{overflow: 'hidden'});
-      
+    this.width = 0;
+    setStyle(document.body, { overflow: 'hidden' });
+    setStyle(document.body, { height: '100%' });
+    setStyle(document.documentElement, { overflow: 'hidden' });
+    setStyle(document.documentElement, { height: '100%' });
+
     this.width = document.documentElement.clientWidth;
     this.height = document.documentElement.clientHeight;
-    setStyle(this.el,{height: this.height + "px"});
-    setStyle(this.el,{transition: "transform .5s"});
+    // setStyle(this.el,{height: this.height + "px"});
+    setStyle(this.el, { transition: "transform .5s" });
 
     let child = this.elBlock;
     for (let i = 0; i < child.length; i++) {
       const element = child[i];
-      setStyle(element,{height: "100%"});
-      setStyle(element,{width: "100%"});
+      setStyle(element, { height: this.height + 'px' });
+      setStyle(element, { width: "100%" });
     }
     this.pages = child.length;
-    setStyle(this.el,{transform: `translateY(-${
-      this.height * this.current
-    }px)`});
-    this.options.callback(this.current,this.current);
+    setStyle(this.el, {
+      transform: `translateY(-${this.height * this.current
+        }px)`
+    });
+    this.options.callback(this.current, this.current);
   }
 
   private up() {
@@ -82,9 +86,10 @@ export default class FullPage {
     if (next >= this.pages) this.current = this.pages - 1;
     if (next < 0) this.current = 0;
     if (last != this.current) {
-      setStyle(this.el,{transform: `translateY(-${
-        this.height * this.current
-      }px)`});
+      setStyle(this.el, {
+        transform: `translateY(-${this.height * this.current
+          }px)`
+      });
       this.options.callback(this.current, last);
     }
   }
@@ -95,9 +100,10 @@ export default class FullPage {
     if (next >= this.pages) this.current = this.pages - 1;
     if (next < 0) this.current = 0;
     if (last != this.current) {
-      setStyle(this.el,{transform: `translateY(-${
-        this.height * this.current
-      }px)`});
+      setStyle(this.el, {
+        transform: `translateY(-${this.height * this.current
+          }px)`
+      });
       this.options.callback(this.current, last);
     }
   }

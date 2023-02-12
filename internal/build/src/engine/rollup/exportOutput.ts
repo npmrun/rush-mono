@@ -61,7 +61,7 @@ function getFileType(type: filetype | filetype[], isDev: boolean) {
             res.push(
                 {
                     sourcemap: true,
-                    file: resolvePath(`${buildInfo.filename}.cjs.js`),
+                    file: resolvePath(`${buildInfo.filename}.cjs`),
                     format: "cjs",
                 }
             )
@@ -69,7 +69,7 @@ function getFileType(type: filetype | filetype[], isDev: boolean) {
                 res.push(
                     {
                         sourcemap: true,
-                        file: resolvePath(`${buildInfo.filename}.cjs.min.js`),
+                        file: resolvePath(`${buildInfo.filename}.min.cjs`),
                         format: "cjs",
                     }
                 )

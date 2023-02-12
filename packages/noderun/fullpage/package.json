@@ -1,9 +1,9 @@
 {
-  "name": "my-lib",
-  "version": "1.0.0",
+  "name": "@noderun/fullpage",
+  "version": "0.0.2",
   "description": "",
   "scripts": {
-    "test": "node dist/myLib.cjs",
+    "test": "node dist/fullpage.cjs",
     "build": "build build",
     "dev": "build dev"
   },
@@ -15,7 +15,11 @@
     "outDir": "./dist",
     "entry": "./src/main.ts",
     "watch": "es",
-    "format": ["es" , "umd" , "cjs"]
+    "format": [
+      "es",
+      "umd",
+      "cjs"
+    ]
   },
   "keywords": [],
   "author": "",

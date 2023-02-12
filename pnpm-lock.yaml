@@ -135,7 +135,7 @@ importers:
       vue-router: 4.1.6_vue@3.2.45
       windicss: 3.5.6
 
-  packages/my-lib:
+  packages/fullpage:
     specifiers: {}
 
   packages/playground:
